@@ -22,7 +22,7 @@ def init_page():
 	for domain in ['Special', 'Force', 'Entropy', 'Form', 'Inertia', 'Life']:
 		s = SECTION(H1(domain), Class=domain.lower())
 		for item in data[domain]:
-			data_value = ' '.join(sorted(set(' '.join([z for x in item['nodes'] for y in x for z in y] + [y for x in item['implicit'] for y in x if y]).lower().split())))
+			data_value = ' '.join(sorted(set(' '.join([item['name']] + [z for x in item['nodes'] for y in x for z in y] + [y for x in item['implicit'] for y in x if y]).lower().split())))
 			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=data_value)
 			t <= TR(TH(INPUT(type='checkbox')) + TH(item['name']) + TH(f"Tier {item['tier']}"))
 			req = ', '.join([f"{item['require'][x]} {x}" for x in item['require']])
@@ -32,7 +32,7 @@ def init_page():
 				t <= TR(TH('Selection') + TH('Value(s)') + TH('Implicit(s)'))
 				for c in range(len(item['nodes'])):
 					rspan = len(item['nodes'][c])
-					cell_vals = ' '.join(sorted(set(' '.join([y for x in item['nodes'][c] for y in x] + [x for x in item['implicit'][c] if x]).lower().split())))
+					cell_vals = ' '.join(sorted(set(' '.join([item['name']] + [y for x in item['nodes'][c] for y in x] + [x for x in item['implicit'][c] if x]).lower().split())))
 					n = ', '.join(item['nodes'][c][0])
 					nodes[n].append((domain, item['name'], c, 0))
 					if item['implicit'][c]:
