@@ -40,10 +40,10 @@ def load_page_firefox(page_name):
 def update_page(soup):
 	meta1 = soup.new_tag('meta')
 	meta1['name'] = 'description'
-	meta1['content'] = 'Genshin Impact Character and Grind planner.'
+	meta1['content'] = 'Divinity Original Sin 2 Epic Encounters Ascension Planner.'
 	meta2 = soup.new_tag('meta')
 	meta2['name'] = 'keywords'
-	meta2['content'] = 'best videogames, free to play, free game, online games, fantasy games, PC games, PC gaming, Genshin Impact, character planner'
+	meta2['content'] = 'best videogames, free to play, free game, online games, fantasy games, PC games, PC gaming, Divinity Original Sin 2,character planner'
 	soup.head.extend([meta1, meta2])
 	soup.find('meta', {'name': 'robots'}).extract()
 	soup.find('script', {'src': 'gen_page.py'})['src'] = 'main.py'
