@@ -61,7 +61,8 @@ def init_page():
 		'Save/Load/Share Builds',
 		"Note any differences from Derpy's mod",
 		'"Least Nodes" finder, with node limit',
-		'Implement Only Show Selected Ascendancies'
+		'Implement Only Show Selected Ascendancies',
+		'Status display of required and granted resources'
 	]
 	s = SECTION(P(x) for x in notes)
 	doc['todo'] <= s
