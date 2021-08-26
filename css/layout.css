@@ -173,7 +173,7 @@ button.current_tab {
 
 table {
 	border-collapse: collapse;
-	table-layout: fixed
+	table-layout: fixed;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -390,6 +390,10 @@ table.spacer td:nth-child(10),
     white-space: nowrap;
 }
 
+.node_column {
+    width: 70%;
+    word-wrap: break-word;
+}
 
 table.spacer th:nth-child(5),
 table.spacer td:nth-child(5),

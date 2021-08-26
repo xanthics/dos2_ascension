@@ -44,7 +44,8 @@ def init_page():
 		doc['ascensions'] <= s
 
 	# set up nodes list
-	t = TABLE(TR(TH("Node") + TH('Location(s)')), Class='onehundred borders')
+	t = TABLE(COL(Class='node_column') + COL(), Class='onehundred borders')
+	t <= TR(TH("Node") + TH('Location(s)'))
 	for node in sorted(nodes):
 		t <= TR(TD(node, rowspan=len(nodes[node])) + TD(str(nodes[node][0]), Class=nodes[node][0][0].lower()), data_value=node.lower())
 		for idx in range(1, len(nodes[node])):
