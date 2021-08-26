@@ -1,5 +1,5 @@
 from browser import document as doc
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, SECTION, DIV, OPTION, BR, COL, H1, BUTTON
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, SECTION, DIV, OPTION, BR, COL, H1, BUTTON, P
 from json import load
 from collections import defaultdict
 
@@ -54,7 +54,17 @@ def init_page():
 		for idx in range(1, len(nodes[node])):
 			t <= TR(TD(f"{nodes[node][idx][1]}: {nodes[node][idx][2]}{'.' + str(nodes[node][idx][3]) if len(nodes[node][idx]) == 4 else ''}", Class=nodes[node][idx][0].lower()), data_value=sorted(set(node.lower().split())))
 
-	doc['nodes'] <= t
+	doc['nodes'] <= SECTION(t)
+
+	# working on
+	notes = [
+		'Save/Load/Share Builds',
+		"Note any differences from Derpy's mod",
+		'"Least Nodes" finder, with node limit',
+		'Implement Only Show Selected Ascendancies'
+	]
+	s = SECTION(P(x) for x in notes)
+	doc['todo'] <= s
 
 
 init_page()
