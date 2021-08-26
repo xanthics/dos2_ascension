@@ -402,6 +402,9 @@ table.spacer td:nth-child(10){
     width: 3px !important;
 }
 
+.special {
+    background-color: rgb(5, 5, 5);
+}
 .force {
     background-color: rgb(40, 5, 5);
 }
