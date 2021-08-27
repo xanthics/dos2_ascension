@@ -47,6 +47,10 @@ def save_state(ev):
 
 # Clear keyword box
 def clear_keywords(ev):
+	# unhide all the table rows
+	for el in doc.get(selector="tr"):
+		if 'hidden' in el.attrs:
+			del el.attrs['hidden']
 	doc['keywords'].value = ''
 	event = window.Event.new('input')
 	doc['keywords'].dispatchEvent(event)
@@ -57,8 +61,8 @@ def init_page():
 	# Only update visibility if keywords is empty
 	if not doc['keywords'].value:
 		always_show = True if doc['always_show'].value == 'no' else False
-		for el in doc.get(selector="[data-value]"):
-			if always_show and 'container' not in el.class_name:
+		for el in doc.get(selector="[data-asc-id]"):
+			if always_show or doc[f'check-{el.attrs["data-asc-id"]}'].checked:
 				if 'hidden_class' in el.class_name:
 					el.attrs['class'] = "container"
 				elif 'hidden' in el.attrs:

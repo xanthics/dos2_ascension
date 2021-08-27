@@ -23,8 +23,8 @@ def init_page():
 		s = SECTION(H1(domain), Class=domain.lower())
 		for item in data[domain]:
 			data_value = ' '.join(sorted(set(' '.join([item['name']] + [z for x in item['nodes'] for y in x for z in y] + [y for x in item['implicit'] for y in x if y]).lower().split())))
-			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=data_value)
-			t <= TR(TH(INPUT(type='checkbox')) + TH(item['name']) + TH(f"Tier {item['tier']}"))
+			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=data_value, data_asc_id=item["name"].replace(" ", "_"))
+			t <= TR(TH(INPUT(type='checkbox', Id=f'check-{item["name"].replace(" ", "_")}', Class="save")) + TH(item['name']) + TH(f"Tier {item['tier']}"))
 			req = ', '.join([f"{item['require'][x]} {x}" for x in item['require']])
 			comp = ', '.join([f"{item['complete'][x]} {x}" for x in item['complete']]) if 'complete' in item else 'Nothing'
 			t <= TR(TH() + TH(f"Required: {req}") + TH(f"Completion: {comp}"))
@@ -37,7 +37,7 @@ def init_page():
 					nodes[n].append((domain, item['name'], c, 0))
 					if item['implicit'][c]:
 						nodes[', '.join(item['implicit'][c])].append((domain, item['name'], c))
-					t <= TR(TD(f"{c}: " + SELECT(OPTION(x, value=f"{x}") for x in ['Any'] + list(range(rspan))), rowspan=rspan) + TD(n) + TD(', '.join(item['implicit'][c]), rowspan=rspan), data_value=cell_vals)
+					t <= TR(TD(f"{c+1}: " + SELECT(OPTION(x, value=f"{x}") for x in ['Any'] + list(range(1, rspan+1))), rowspan=rspan) + TD(n) + TD(', '.join(item['implicit'][c]), rowspan=rspan), data_value=cell_vals)
 					for idx in range(1, len(item['nodes'][c])):
 						n = ', '.join(item['nodes'][c][idx])
 						nodes[n].append((domain, item['name'], c, idx))
@@ -61,7 +61,6 @@ def init_page():
 		'Save/Load/Share Builds',
 		"Note any differences from Derpy's mod",
 		'"Least Nodes" finder, with node limit',
-		'Implement Only Show Selected Ascendancies',
 		'Status display of required and granted resources'
 	]
 	s = SECTION(P(x) for x in notes)
