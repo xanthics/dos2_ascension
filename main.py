@@ -27,53 +27,57 @@ def load_page():
 # Function handling filtering changes
 @bind('.save', 'input')
 def save_state(ev):
-	if ((ev.target.id in ['always_show'] or ev.target.type == 'checkbox') and not doc['keywords'].value) or (ev.target.id == 'keywords' and not ev.target.value):
-		init_page()
-	elif ev.target.id == 'keywords':
+	update_page()
+
+
+# Function handling filtering changes
+@bind('.filter', 'input')
+def update_state(ev):
+	if ev.target.id == 'keywords' and doc['keywords'].value:
 		search_terms = ev.target.value.lower().split()
 		for el in doc.get(selector="[data-value]"):
 			terms = el.attrs['data-value']
 			if all(x in terms for x in search_terms):
-				if 'hidden_class' in el.class_name:
-					el.attrs['class'] = "container"
-				elif 'hidden' in el.attrs:
+				if 'hidden' in el.attrs:
 					del el.attrs['hidden']
 			else:
-				if 'container' in el.class_name:
-					el.attrs['class'] = "container hidden_class"
-				else:
-					el.attrs['hidden'] = ''
+				el.attrs['hidden'] = ''
+		for el in doc.get(selector="[data-content]"):
+			terms = el.attrs['data-content']
+			if all(x in terms for x in search_terms):
+				if 'hidden_class' in el.class_name:
+					del el.attrs['class']
+			else:
+				el.attrs['class'] = 'hidden_class'
+	else:
+		update_page()
 
 
 # Clear keyword box
 def clear_keywords(ev):
-	# unhide all the table rows
-	for el in doc.get(selector="tr"):
-		if 'hidden' in el.attrs:
-			del el.attrs['hidden']
 	doc['keywords'].value = ''
 	event = window.Event.new('input')
 	doc['keywords'].dispatchEvent(event)
+	update_page()
 
 
 # Set the page visibility state
-def init_page():
+def update_page():
 	# Only update visibility if keywords is empty
 	if not doc['keywords'].value:
+		# show all table data
+		for el in doc.get(selector=".hidden_class"):
+			del el.attrs['class']
+
 		always_show = True if doc['always_show'].value == 'no' else False
 		for el in doc.get(selector="[data-asc-id]"):
-			if always_show or doc[f'check-{el.attrs["data-asc-id"]}'].checked:
-				if 'hidden_class' in el.class_name:
-					el.attrs['class'] = "container"
-				elif 'hidden' in el.attrs:
+			if always_show or doc[f'c-{el.attrs["data-asc-id"]}'].checked:
+				if 'hidden' in el.attrs:
 					del el.attrs['hidden']
 			else:
-				if 'container' in el.class_name:
-					el.attrs['class'] = "container hidden_class"
-				else:
-					el.attrs['hidden'] = ''
+				el.attrs['hidden'] = ''
 
 
 load_page()
-init_page()
+update_page()
 del doc['loading']
