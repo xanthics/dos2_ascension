@@ -46,13 +46,13 @@ def init_page():
 				for c in range(len(item['nodes'])):
 					rspan = len(item['nodes'][c])
 					n = ', '.join(item['nodes'][c][0])
-					nodes[n].append((domain, item['name'], c, 0))
+					nodes[n].append((domain, item['name'], c+1, 1))
 					if item['implicit'][c]:
-						nodes[', '.join(item['implicit'][c])].append((domain, item['name'], c))
+						nodes[', '.join(item['implicit'][c])].append((domain, item['name'], c+1))
 					t <= TR(TD(f"{c+1}: " + SELECT((OPTION(x, value=f"{x}") for x in ['Any'] + list(range(1, rspan+1))), Id=f'{item["name"].replace(" ", "_")}{c}', Class='save'), rowspan=rspan) + TD(DIV(n, Id=f'{item["name"].replace(" ", "_")}{c}{1}', data_content=min_search_coverage(item['nodes'][c][0] + [item['name']]))) + TD(DIV(', '.join(item['implicit'][c]), data_content=min_search_coverage(item['implicit'][c])), rowspan=rspan))
 					for idx in range(1, len(item['nodes'][c])):
 						n = ', '.join(item['nodes'][c][idx])
-						nodes[n].append((domain, item['name'], c, idx))
+						nodes[n].append((domain, item['name'], c+1, idx+1))
 						t <= TR(TD(DIV(n, Id=f'{item["name"].replace(" ", "_")}{c}{idx + 1}', data_content=min_search_coverage(item['nodes'][c][idx] + [item['name']]))))
 			t <= TR(TH(item['flavor'], colspan=3))
 			s <= t
