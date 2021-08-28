@@ -45,7 +45,8 @@ def gen_have_need(t_asc=None, t_nodes=None):
 	have = {'Force': 0, 'Life': 0, 'Form': 0, 'Inertia': 0, 'Entropy': 0}
 	need = {'Force': 0, 'Life': 0, 'Form': 0, 'Inertia': 0, 'Entropy': 0}
 	for n in t_nodes:
-		if n in nodes and f'c-{n}' in t_asc:
+		print(f'c-{n[:-2]}')
+		if n in nodes and f'c-{n[:-2]}' in t_asc:
 			have = {x: have[x] + nodes[n].get(x, 0) for x in have}
 	for n in t_asc:
 		if n in asc:
