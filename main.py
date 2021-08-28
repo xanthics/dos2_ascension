@@ -61,9 +61,9 @@ def update_state(ev):
 			terms = el.attrs['data-content']
 			if all(x in terms for x in search_terms):
 				if 'hidden_class' in el.class_name:
-					del el.class_name
+					el.class_name = el.class_name.replace('hidden_class', '').strip()
 			else:
-				el.class_name = 'hidden_class'
+				el.class_name += ' hidden_class'
 	else:
 		update_page()
 
