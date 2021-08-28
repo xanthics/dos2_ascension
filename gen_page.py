@@ -78,7 +78,8 @@ def init_page():
 
 	# working on
 	notes = [
-		'Save/Load/Share Builds',
+		'Move select/search to a floating bar',
+		'Add a summary of required and obtained ascension points'
 	]
 	s = SECTION(P(x) for x in notes)
 	doc['todo'] <= s
