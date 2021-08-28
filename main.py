@@ -56,7 +56,11 @@ def gen_have_need(t_asc=None, t_nodes=None):
 	t = TABLE(TR(TD() + TD('Force', Class='force') + TD('Life', Class='life') + TD('Form', Class='form') + TD('Inertia', Class='inertia') + TD('Entropy', Class='entropy')), Class='onehundred borders')
 	t <= TR(TD('Required') + TD(need['Force']) + TD(need['Life']) + TD(need['Form']) + TD(need['Inertia']) + TD(need['Entropy']))
 	t <= TR(TD('Have') + TD(have['Force']) + TD(have['Life']) + TD(have['Form']) + TD(have['Inertia']) + TD(have['Entropy']))
-	t <= TR(TD('Missing') + TD(missing['Force']) + TD(missing['Life']) + TD(missing['Form']) + TD(missing['Inertia']) + TD(missing['Entropy']))
+	t <= TR(TD('Missing') + TD(missing['Force'], Class='force' if missing['Force'] else '') +
+							TD(missing['Life'], Class='life' if missing['Life'] else '') +
+							TD(missing['Form'], Class='form' if missing['Form'] else '') +
+							TD(missing['Inertia'], Class='inertia' if missing['Inertia'] else '') +
+							TD(missing['Entropy'], Class='entropy' if missing['Entropy'] else ''))
 
 	doc['have_need'].text = ''
 	doc['have_need'] <= t
