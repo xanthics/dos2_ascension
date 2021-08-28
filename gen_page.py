@@ -18,6 +18,7 @@ def min_search_coverage(items):
 
 
 def init_page():
+	# keep track of ascendancy resources needed/granted
 	# set up page search functions
 	always_show = SELECT(Id=f"always_show", Class=f"filter onehundred")
 	for s in ['no', 'yes']:
@@ -35,9 +36,10 @@ def init_page():
 	for domain in ['Special', 'Force', 'Entropy', 'Form', 'Inertia', 'Life']:
 		s = SECTION(H1(domain), Id=domain.lower(), Class=domain.lower())
 		for item in data[domain]:
+			select_id = f'{item["name"].replace(" ", "_")}'
 			data_value = min_search_coverage([item['name']] + [z for x in item['nodes'] for y in x for z in y] + [y for x in item['implicit'] for y in x if y])
 			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=data_value, data_asc_id=item["name"].replace(" ", "_"))
-			t <= TR(TH(INPUT(type='checkbox', Id=f'c-{item["name"].replace(" ", "_")}', Class="save")) + TH(item['name']) + TH(f"Tier {item['tier']}"))
+			t <= TR(TH(INPUT(type='checkbox', Id=f'c-{select_id}', Class="save")) + TH(item['name']) + TH(f"Tier {item['tier']}"))
 			req = ', '.join([f"{item['require'][x]} {x}" for x in item['require']])
 			comp = ', '.join([f"{item['complete'][x]} {x}" for x in item['complete']]) if 'complete' in item else 'Nothing'
 			t <= TR(TH() + TH(f"Required: {req}") + TH(f"Completion: {comp}"))
@@ -49,11 +51,11 @@ def init_page():
 					nodes[n].append((domain, item['name'], c+1, 1))
 					if item['implicit'][c]:
 						nodes[', '.join(item['implicit'][c])].append((domain, item['name'], c+1))
-					t <= TR(TD(f"{c+1}: " + SELECT((OPTION(x, value=f"{x}") for x in ['Any'] + list(range(1, rspan+1))), Id=f'{item["name"].replace(" ", "_")}{c}', Class='save'), rowspan=rspan) + TD(DIV(n, Id=f'{item["name"].replace(" ", "_")}{c}{1}', data_content=min_search_coverage(item['nodes'][c][0] + [item['name']]))) + TD(DIV(', '.join(item['implicit'][c]), data_content=min_search_coverage(item['implicit'][c])), rowspan=rspan))
+					t <= TR(TD(f"{c+1}: " + SELECT((OPTION(x, value=f"{x}") for x in ['Any'] + list(range(1, rspan+1))), Id=f'{select_id}{c}', Class='save'), rowspan=rspan) + TD(DIV(n, Id=f'{select_id}{c}{1}', data_content=min_search_coverage(item['nodes'][c][0] + [item['name']]))) + TD(DIV(', '.join(item['implicit'][c]), data_content=min_search_coverage(item['implicit'][c])), rowspan=rspan))
 					for idx in range(1, len(item['nodes'][c])):
 						n = ', '.join(item['nodes'][c][idx])
 						nodes[n].append((domain, item['name'], c+1, idx+1))
-						t <= TR(TD(DIV(n, Id=f'{item["name"].replace(" ", "_")}{c}{idx + 1}', data_content=min_search_coverage(item['nodes'][c][idx] + [item['name']]))))
+						t <= TR(TD(DIV(n, Id=f'{select_id}{c}{idx + 1}', data_content=min_search_coverage(item['nodes'][c][idx] + [item['name']]))))
 			t <= TR(TH(item['flavor'], colspan=3))
 			s <= t
 		doc['ascensions'] <= s
@@ -70,7 +72,7 @@ def init_page():
 	t <= TR(TH("Node") + TH('Location(s)'))
 	for node in sorted(nodes):
 		data_value = min_search_coverage(node.split())
-		t <= TR(TD(node, rowspan=len(nodes[node])) + TD(f"{nodes[node][0][1]}: {nodes[node][0][2]}{'.' + str(nodes[node][0][3]) if len(nodes[node][0]) == 4 else ''}", Class=nodes[node][0][0].lower()), data_value=data_value)
+		t <= TR(TD(DIV(node), rowspan=len(nodes[node])) + TD(f"{nodes[node][0][1]}: {nodes[node][0][2]}{'.' + str(nodes[node][0][3]) if len(nodes[node][0]) == 4 else ''}", Class=nodes[node][0][0].lower()), data_value=data_value)
 		for idx in range(1, len(nodes[node])):
 			t <= TR(TD(f"{nodes[node][idx][1]}: {nodes[node][idx][2]}{'.' + str(nodes[node][idx][3]) if len(nodes[node][idx]) == 4 else ''}", Class=nodes[node][idx][0].lower()), data_value=data_value)
 

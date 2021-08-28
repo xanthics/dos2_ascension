@@ -209,6 +209,6 @@ option {
     background-color: rgb(40, 0, 40);
 }
 
-div {
+td > div {
     margin: 5px;
 }

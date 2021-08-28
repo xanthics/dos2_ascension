@@ -1,7 +1,7 @@
 from browser import document as doc
 from browser import bind, window
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, SECTION
-from browser.local_storage import storage
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, SECTION
+from resource_vals import asc, nodes
 
 
 def load_page():
@@ -22,6 +22,8 @@ def load_page():
 			for node in doc.query['nodes'].split(','):
 				doc[node[:-1]].value = node[-1]
 
+	gen_have_need()
+
 	# Make it so navigation buttons work
 	@bind('.page', 'click')
 	def change_page(ev):
@@ -34,15 +36,46 @@ def load_page():
 			doc[f'b_{i}'].class_name = 'page'
 
 
+# update have and need
+def gen_have_need(t_asc=None, t_nodes=None):
+	if not t_asc:
+		t_asc = [el.id for el in doc.get(selector=":checked") if el.id]
+	if not t_nodes:
+		t_nodes = [f"{el.id}{el.value}" for el in doc.get(selector="select.save") if el.value != 'Any']
+	have = {'Force': 0, 'Life': 0, 'Form': 0, 'Inertia': 0, 'Entropy': 0}
+	need = {'Force': 0, 'Life': 0, 'Form': 0, 'Inertia': 0, 'Entropy': 0}
+	for n in t_nodes:
+		if n in nodes and f'c-{n}' in t_asc:
+			have = {x: have[x] + nodes[n].get(x, 0) for x in have}
+	for n in t_asc:
+		if n in asc:
+			have = {x: have[x] + asc[n]['complete'].get(x, 0) for x in have}
+			need = {x: max(need[x], asc[n]['require'].get(x, 0)) for x in need}
+	missing = {x: (need[x] - have[x] if need[x] - have[x] > 0 else '') for x in have}
+
+	t = TABLE(TR(TD() + TD('Force', Class='force') + TD('Life', Class='life') + TD('Form', Class='form') + TD('Inertia', Class='inertia') + TD('Entropy', Class='entropy')), Class='onehundred borders')
+	t <= TR(TD('Required') + TD(need['Force']) + TD(need['Life']) + TD(need['Form']) + TD(need['Inertia']) + TD(need['Entropy']))
+	t <= TR(TD('Have') + TD(have['Force']) + TD(have['Life']) + TD(have['Form']) + TD(have['Inertia']) + TD(have['Entropy']))
+	t <= TR(TD('Missing') + TD(missing['Force']) + TD(missing['Life']) + TD(missing['Form']) + TD(missing['Inertia']) + TD(missing['Entropy']))
+
+	doc['have_need'].text = ''
+	doc['have_need'] <= t
+
+
 # Function handling filtering changes
 @bind('.save', 'input')
 def save_state(ev):
 	update_page(ev.target.id, ev.target.type)
-	asc = ','.join([el.id for el in doc.get(selector=":checked") if el.id])
-	asc = 'asc=' + asc if asc else ''
-	node = ','.join([f"{el.id}{el.value}" for el in doc.get(selector="select.save") if el.value != 'Any'])
-	node = 'nodes=' + node if node else ''
-	window.history.replaceState('', '', f"?{asc}{'&' if asc and node else ''}{node}")
+	# calculate required and generated ascendancy resources
+	t_asc = [el.id for el in doc.get(selector=":checked") if el.id]
+	t_nodes = [f"{el.id}{el.value}" for el in doc.get(selector="select.save") if el.value != 'Any']
+	gen_have_need(t_asc, t_nodes)
+	# update query string
+	calc_asc = ','.join(t_asc)
+	calc_asc = 'asc=' + calc_asc if calc_asc else ''
+	calc_node = ','.join(t_nodes)
+	calc_node = 'nodes=' + calc_node if calc_node else ''
+	window.history.replaceState('', '', f"?{calc_asc}{'&' if calc_asc and calc_node else ''}{calc_node}")
 
 
 # Function handling filtering changes
