@@ -6,7 +6,7 @@ from browser.local_storage import storage
 
 def load_page():
 	# add navigation buttons
-	pages = ['ascensions', 'nodes', 'todo']  # , 'About', 'Changelog']
+	pages = ['ascensions', 'nodes']  #, 'todo']  # , 'About', 'Changelog']
 	for c, page in enumerate(pages):
 		doc['nav_buttons'] <= BUTTON(page.capitalize(), data_id=page, Class=f'page{" current_tab" if not c else ""}', Id=f'b_{page}')
 
