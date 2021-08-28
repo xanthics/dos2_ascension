@@ -108,8 +108,8 @@ button.current_tab {
 table {
 	border-collapse: collapse;
 	table-layout: fixed;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 table.borders th,
@@ -207,4 +207,8 @@ option {
 }
 .entropy {
     background-color: rgb(40, 0, 40);
+}
+
+div {
+    margin: 5px;
 }
