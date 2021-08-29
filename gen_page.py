@@ -41,7 +41,7 @@ def init_page():
 			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', Id=select_id, data_value=data_value, data_points=len(item['nodes']))
 			t <= TR(TH(INPUT(type='checkbox', Id=f'c-{select_id}', Class="save")) + TH(item['name']) + TH(f"Tier {item['tier']}"))
 			req = ', '.join([f"{item['require'][x]} {x}" for x in item['require']])
-			comp = ', '.join([f"{item['complete'][x]} {x}" for x in item['complete']]) if 'complete' in item else 'Nothing'
+			comp = ', '.join([f"{item['complete'][x]} {x}" for x in item['complete']]) if item['complete'] else 'None'
 			t <= TR(TH() + TH(f"Required: {req}") + TH(f"Completion: {comp}"))
 			if len(item['nodes']):
 				t <= TR(TH('Selection') + TH('Value(s)') + TH('Implicit(s)'))
