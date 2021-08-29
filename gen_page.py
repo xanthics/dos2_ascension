@@ -38,7 +38,7 @@ def init_page():
 		for item in data[domain]:
 			select_id = f'{item["name"].replace(" ", "_")}'
 			data_value = min_search_coverage([item['name']] + [z for x in item['nodes'] for y in x for z in y] + [y for x in item['implicit'] for y in x if y])
-			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=data_value, data_asc_id=item["name"].replace(" ", "_"))
+			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', Id=select_id, data_value=data_value, data_points=len(item['nodes']))
 			t <= TR(TH(INPUT(type='checkbox', Id=f'c-{select_id}', Class="save")) + TH(item['name']) + TH(f"Tier {item['tier']}"))
 			req = ', '.join([f"{item['require'][x]} {x}" for x in item['require']])
 			comp = ', '.join([f"{item['complete'][x]} {x}" for x in item['complete']]) if 'complete' in item else 'Nothing'
@@ -62,7 +62,7 @@ def init_page():
 
 	# add core nodes
 	for c_node in ['Force', 'Entropy', 'Form', 'Inertia', 'Life']:
-		t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=c_node, data_asc_id=f"Core_{c_node}")
+		t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=c_node, Id=f"Core_{c_node}", data_points=1)
 		t <= TR(TH(INPUT(type='checkbox', Id=f'c-Core_{c_node}', Class="save")) + TH(f"Core: {c_node}") + TH(f"Tier 0"))
 		t <= TR(TH() + TH(f"Required: None") + TH(f"Completion: 1 {c_node}"))
 		t <= TR(TH("One of the 5 central nodes.", colspan=3))

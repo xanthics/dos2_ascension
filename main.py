@@ -45,7 +45,6 @@ def gen_have_need(t_asc=None, t_nodes=None):
 	have = {'Force': 0, 'Life': 0, 'Form': 0, 'Inertia': 0, 'Entropy': 0}
 	need = {'Force': 0, 'Life': 0, 'Form': 0, 'Inertia': 0, 'Entropy': 0}
 	for n in t_nodes:
-		print(f'c-{n[:-2]}')
 		if n in nodes and f'c-{n[:-2]}' in t_asc:
 			have = {x: have[x] + nodes[n].get(x, 0) for x in have}
 	for n in t_asc:
@@ -53,8 +52,9 @@ def gen_have_need(t_asc=None, t_nodes=None):
 			have = {x: have[x] + asc[n]['complete'].get(x, 0) for x in have}
 			need = {x: max(need[x], asc[n]['require'].get(x, 0)) for x in need}
 	missing = {x: (need[x] - have[x] if need[x] - have[x] > 0 else '') for x in have}
+	points = sum(int(doc[x[2:]].attrs["data-points"]) for x in t_asc)
 
-	t = TABLE(TR(TD() + TD('Force', Class='force') + TD('Life', Class='life') + TD('Form', Class='form') + TD('Inertia', Class='inertia') + TD('Entropy', Class='entropy')), Class='onehundred borders')
+	t = TABLE(TR(TD(f"<strong>Total Points:</strong> {points}") + TD('Force', Class='force') + TD('Life', Class='life') + TD('Form', Class='form') + TD('Inertia', Class='inertia') + TD('Entropy', Class='entropy')), Class='onehundred borders')
 	t <= TR(TD('Required') + TD(need['Force']) + TD(need['Life']) + TD(need['Form']) + TD(need['Inertia']) + TD(need['Entropy']))
 	t <= TR(TD('Have') + TD(have['Force']) + TD(have['Life']) + TD(have['Form']) + TD(have['Inertia']) + TD(have['Entropy']))
 	t <= TR(TD('Missing') + TD(missing['Force'], Class='force' if missing['Force'] else '') +
@@ -138,8 +138,8 @@ def update_page(tar_id=None, tar_type=None):
 						doc[el.id + str(idx)].class_name = doc[el.id + str(idx)].class_name.replace('demphasis', '').strip()
 					else:
 						doc[el.id + str(idx)].class_name += ' demphasis'
-			for el in doc.get(selector="[data-asc-id]"):
-				if always_show or doc[f'c-{el.attrs["data-asc-id"]}'].checked:
+			for el in doc.get(selector="[data-points]"):
+				if always_show or doc[f'c-{el.id}'].checked:
 					if 'hidden' in el.attrs:
 						del el.attrs['hidden']
 				else:
