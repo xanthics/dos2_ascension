@@ -21,7 +21,8 @@ def init_page():
 	# Note about Derpy's mod changes
 	s = SECTION(Class='derpy')
 	derpy_generic = [
-		"<strong>Any change in this color is specific to Derpy's Mod.</strong>  Current as of 31/08/2021.",
+		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 31/08/2021.",
+		"You can also search for derpy to see only his changed nodes.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
 Paucity: Default duration from 1 turn to 2 turns<br />
 Defiance: Default duration from 1 turn to 2 turns<br />
@@ -61,7 +62,7 @@ There’s no extra checks for this one so can precast it before combat if you wa
 		s = SECTION(H1(domain), Id=domain.lower(), Class=domain.lower())
 		for item in data[domain]:
 			select_id = f'{item["name"].replace(" ", "_")}'
-			data_value = min_search_coverage([item['name']] + [z for x in item['nodes'] for y in x for z in y] + [y for x in item['implicit'] for y in x if y])
+			data_value = min_search_coverage([item['name']] + [z for x in item['nodes'] for y in x for z in y] + [y for x in item['implicit'] for y in x if y] + ([item['special']] if 'special' in item else []))
 			t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', Id=select_id, data_value=data_value, data_points=len(item['nodes']))
 			t <= TR(TH(INPUT(type='checkbox', Id=f'c-{select_id}', Class="save")) + TH(item['name']) + TH(f"Tier {item['tier']}"))
 			req = ', '.join([f"{item['require'][x]} {x}" for x in item['require']])
@@ -82,6 +83,9 @@ There’s no extra checks for this one so can precast it before combat if you wa
 						n = ', '.join(item['nodes'][c][idx])
 						nodes[n].append((domain, item['name'], c+1, idx+1))
 						t <= TR(TD(DIV(n, Id=f'{select_id}{c}{idx + 1}', data_content=min_search_coverage(item['nodes'][c][idx] + [item['name']]))))
+			if 'special' in item:
+				t <= TR(TD(DIV(item['special'], data_content=min_search_coverage([item['special']] + [item['name']])), colspan=3))
+				nodes[item['special']].append((domain, item['name'], 0))
 			t <= TR(TH(item['flavor'], colspan=3))
 			s <= t
 		doc['ascensions'] <= s
