@@ -56,12 +56,15 @@ asc = {
 	'c-The_Crow': {'require': {'Entropy': 1}, 'complete': {'Entropy': 3, 'Form': 1}},
 	'c-The_Fly': {'require': {'Entropy': 1}, 'complete': {'Entropy': 3, 'Form': 2}},
 	'c-The_Vulture': {'require': {'Entropy': 1}, 'complete': {'Force': 2, 'Entropy': 3}},
+	'c-The_Wolf': {'require': {'Entropy': 1}, 'complete': {'Force': 1, 'Entropy': 3}},
 	'c-Blood_Ape': {'require': {'Force': 1, 'Entropy': 3, 'Form': 2}, 'complete': {'Entropy': 2, 'Form': 1}},
 	'c-Extinction': {'require': {'Force': 2, 'Entropy': 4}, 'complete': {'Entropy': 2}},
 	'c-The_Imp': {'require': {'Entropy': 5, 'Form': 1}, 'complete': {'Entropy': 3}},
 	'c-The_Hyena': {'require': {'Force': 1, 'Entropy': 5}, 'complete': {'Entropy': 3}},
+	'c-The_Supplicant': {'require': {'Entropy': 4, 'Form': 2}, 'complete': {'Entropy': 2}},
 	'c-Death': {'require': {'Force': 2, 'Entropy': 8, 'Form': 3}, 'complete': {}},
-	'c-Decay': {'require': {'Force': 5, 'Entropy': 7, 'Form': 1}, 'complete': {}}
+	'c-Decay': {'require': {'Force': 5, 'Entropy': 7, 'Form': 1}, 'complete': {}},
+	'c-Demilich': {'require': {'Force': 1, 'Entropy': 7, 'Form': 5}, 'complete': {}}
 }
 
 nodes = {
@@ -184,5 +187,10 @@ nodes = {
 	'The_Hyena12': {'Entropy': 1},
 	'The_Hyena13': {'Form': 1},
 	'The_Hyena14': {'Inertia': 1},
-	'The_Hyena15': {'Life': 1}
+	'The_Hyena15': {'Life': 1},
+	'The_Supplicant11': {'Force': 1},
+	'The_Supplicant12': {'Entropy': 1},
+	'The_Supplicant13': {'Form': 1},
+	'The_Supplicant14': {'Inertia': 1},
+	'The_Supplicant15': {'Life': 1}
 }

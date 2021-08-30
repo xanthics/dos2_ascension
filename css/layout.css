@@ -212,3 +212,8 @@ option {
 td > div {
     margin: 5px;
 }
+
+.derpy {
+    margin: 5px;
+    color: rgb(200, 150, 100);
+}

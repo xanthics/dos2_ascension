@@ -18,6 +18,30 @@ def min_search_coverage(items):
 
 
 def init_page():
+	# Note about Derpy's mod changes
+	s = SECTION(Class='derpy')
+	derpy_generic = [
+		"<strong>Any change in this color is specific to Derpy's Mod.</strong>",
+		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
+Paucity: Default duration from 1 turn to 2 turns<br />
+Defiance: Default duration from 1 turn to 2 turns<br />
+Mercy: Radius from 8m to 13m""",
+		"""<strong>T1 Nodes</strong><br />
+Ascension nodes that previously granted the Inconspicuous talent have been replaced with Opportunist and now apply up to Subjugated II to every enemy within 3m of yourself<br />
+They all use a once per round hidden limit so don’t bother trying to abuse CD resets<br />
+They also require to be in combat<br />
+Ascension nodes that previously granted the Pawn talent have been replaced with Escapist and now also recover 2AP. Expanded them to work with Staff of Magus too<br />
+They all use a once per round hidden limit so don’t bother trying to abuse CD resets<br />
+They also require to be in combat<br />
+Casting Escapist -> Weapon skill will refresh Escapist CD. This is intended<br />
+Ascension nodes that previously granted the Savage Sortilege talent have been increased from 1 turn to 2 turns and also recover 2AP<br />
+There’s no extra checks for this one so can precast it before combat if you want"""
+	]
+	for d in derpy_generic:
+		s <= P(d)
+
+	doc['derpy'] <= s
+
 	# keep track of ascendancy resources needed/granted
 	# set up page search functions
 	always_show = SELECT(Id=f"always_show", Class=f"filter onehundred")
@@ -46,6 +70,8 @@ def init_page():
 			if len(item['nodes']):
 				t <= TR(TH('Selection') + TH('Value(s)') + TH('Implicit(s)'))
 				for c in range(len(item['nodes'])):
+					if not item['nodes'][c]:
+						item['nodes'][c].append(['Nothing'])
 					rspan = len(item['nodes'][c])
 					n = ', '.join(item['nodes'][c][0])
 					nodes[n].append((domain, item['name'], c+1, 1))
