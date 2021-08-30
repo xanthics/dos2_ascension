@@ -21,7 +21,7 @@ def init_page():
 	# Note about Derpy's mod changes
 	s = SECTION(Class='derpy')
 	derpy_generic = [
-		"<strong>Any change in this color is specific to Derpy's Mod.</strong>",
+		"<strong>Any change in this color is specific to Derpy's Mod.</strong>  Current as of 31/08/2021.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
 Paucity: Default duration from 1 turn to 2 turns<br />
 Defiance: Default duration from 1 turn to 2 turns<br />
@@ -106,8 +106,7 @@ There’s no extra checks for this one so can precast it before combat if you wa
 
 	# working on
 	notes = [
-		'Move select/search to a floating bar',
-		'Add a summary of required and obtained ascension points'
+		'Move select/search to a floating bar'
 	]
 	s = SECTION(P(x) for x in notes)
 	doc['todo'] <= s
