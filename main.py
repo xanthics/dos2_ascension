@@ -62,7 +62,7 @@ def gen_have_need(t_asc=None, t_nodes=None):
 
 	t = TABLE(TR(TD(f"<strong>Total Points:</strong> {points}") + TD('Force', Class='force') + TD('Entropy', Class='entropy') + TD('Form', Class='form') + TD('Inertia', Class='inertia') + TD('Life', Class='life')), Class='onehundred borders')
 	t <= TR(TD('Required') + TD(need['Force']) + TD(need['Entropy']) + TD(need['Form']) + TD(need['Inertia']) + TD(need['Life']))
-	t <= TR(TD('Have') + TD(have['Force']) + TD(have['Life']) + TD(have['Form']) + TD(have['Inertia']) + TD(have['Entropy']))
+	t <= TR(TD('Have') + TD(have['Force']) + TD(have['Entropy']) + TD(have['Form']) + TD(have['Inertia']) + TD(have['Life']))
 	t <= TR(TD('Missing') + TD(missing['Force'], Class='force' if missing['Force'] else '') +
 							TD(missing['Entropy'], Class='entropy' if missing['Entropy'] else '') +
 							TD(missing['Form'], Class='form' if missing['Form'] else '') +
