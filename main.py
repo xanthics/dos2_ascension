@@ -1,12 +1,12 @@
 from browser import document as doc
 from browser import bind, window
 from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, SECTION
-from resource_vals import asc, nodes
+from resource_vals import *
 
 
 def load_page():
 	# add navigation buttons
-	pages = ['ascensions', 'nodes', 'todo']  # , 'About', 'Changelog']
+	pages = ['ascensions', 'nodes']  # , 'todo']  # , 'About', 'Changelog']
 	for c, page in enumerate(pages):
 		doc['nav_buttons'] <= BUTTON(page.capitalize(), data_id=page, Class=f'page{" current_tab" if not c else ""}', Id=f'b_{page}')
 
@@ -16,11 +16,17 @@ def load_page():
 	if any(x in doc.query for x in ['asc', 'nodes']):
 		doc['always_show'].value = 'yes'
 		if 'asc' in doc.query:
-			for asc in doc.query['asc'].split(','):
-				doc[asc].checked = True
-		if 'nodes' in doc.query:
-			for node in doc.query['nodes'].split(','):
-				doc[node[:-1]].value = node[-1]
+			v_asc = r2v(doc.query['asc'])
+			for t_asc in asc:
+				if asc[t_asc]['val'] & v_asc:
+					doc[t_asc].checked = True
+		for section in ["Force", "Life", "Form", "Inertia", "Entropy"]:
+			if section in doc.query:
+				v_nodes = r2v(doc.query[section])
+				for t_node in domain_lookup[section]:
+					if t_node & v_nodes:
+						n = domain_lookup[section][t_node]
+						doc[n[:-1]].value = n[-1]
 
 	gen_have_need()
 
@@ -67,6 +73,29 @@ def gen_have_need(t_asc=None, t_nodes=None):
 	doc['have_need'] <= t
 
 
+def v2r(n):
+	base = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_'
+	if n == 0:
+		return base[0]
+	b = len(base)
+	digits = ''
+	while n > 0:
+		digits = base[n % b] + digits
+		n = n // b
+	return digits
+
+
+def r2v(n):
+	base = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_'
+	if n == 'A':
+		return 0
+	b = len(base)
+	val = 0
+	for c, ch in enumerate(n[::-1]):
+		val += base.index(ch) * (b**c)
+	return val
+
+
 # Function handling filtering changes
 @bind('.save', 'input')
 def save_state(ev):
@@ -76,10 +105,19 @@ def save_state(ev):
 	t_nodes = [f"{el.id}{el.value}" for el in doc.get(selector="select.save") if el.value != 'Any']
 	gen_have_need(t_asc, t_nodes)
 	# update query string
-	calc_asc = ','.join(t_asc)
+	v_asc = 0
+	for v in t_asc:
+		v_asc |= asc[v]['val']
+	v_nodes = {}
+	for v in t_nodes:
+		num, ele = node_lookup[v]
+		if ele not in v_nodes:
+			v_nodes[ele] = 0
+		v_nodes[ele] |= num
+	calc_asc = v2r(v_asc)
 	calc_asc = 'asc=' + calc_asc if calc_asc else ''
-	calc_node = ','.join(t_nodes)
-	calc_node = 'nodes=' + calc_node if calc_node else ''
+	calc_node = '&'.join(f"{ele}={v2r(v_nodes[ele])}" for ele in v_nodes)
+
 	window.history.replaceState('', '', f"?{calc_asc}{'&' if calc_asc and calc_node else ''}{calc_node}")
 
 
