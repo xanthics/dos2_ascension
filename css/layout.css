@@ -10,8 +10,14 @@ body {
     visibility: hidden !important;
 }
 
+.demphasis > .derpy,
 .demphasis {
-    color: rgb(60, 60, 60);
+    color: rgb(60, 60, 60) !important;
+}
+
+.derpy {
+    margin: 5px;
+    color: rgb(200, 150, 100);
 }
 
 .onehundred{
@@ -211,9 +217,4 @@ option {
 
 td > div {
     margin: 5px;
-}
-
-.derpy {
-    margin: 5px;
-    color: rgb(200, 150, 100);
 }

@@ -122,7 +122,7 @@ def update_page(tar_id=None, tar_type=None):
 		for idx in range(1, len(doc[tar_id].options)):
 			if el_idx < 0 or idx == el_idx:
 				doc[doc[tar_id].id + str(idx)].class_name = doc[doc[tar_id].id + str(idx)].class_name.replace('demphasis', '').strip()
-			else:
+			elif 'demphasis' not in doc[doc[tar_id].id + str(idx)].class_name:
 				doc[doc[tar_id].id + str(idx)].class_name += ' demphasis'
 	else:
 		# Only update visibility if keywords is empty
@@ -136,7 +136,7 @@ def update_page(tar_id=None, tar_type=None):
 				for idx in range(1, len(el.options)):
 					if el_idx < 0 or idx == el_idx:
 						doc[el.id + str(idx)].class_name = doc[el.id + str(idx)].class_name.replace('demphasis', '').strip()
-					else:
+					elif 'demphasis' not in doc[el.id + str(idx)].class_name:
 						doc[el.id + str(idx)].class_name += ' demphasis'
 			for el in doc.get(selector="[data-points]"):
 				if always_show or doc[f'c-{el.id}'].checked:
