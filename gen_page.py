@@ -3,6 +3,7 @@ from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, SECTION, DIV, OPTION,
 from json import load
 from collections import defaultdict
 import re
+from artifact_data import artifacts
 
 
 def min_search_coverage(items):
@@ -97,6 +98,23 @@ There’s no extra checks for this one so can precast it before combat if you wa
 		t <= TR(TH() + TH(f"Required: None") + TH(f"Completion: 1 {c_node}"))
 		t <= TR(TH("One of the 5 central nodes.", colspan=3))
 		doc['special'] <= t
+	# set up artifacts
+	for domain in ["Weapon", "Armor", "Jewelry"]:
+		s = SECTION(H1(domain), Id=domain.lower(), Class=domain.lower())
+		for item in artifacts[domain]:
+			nodes[item['power']].append((domain, item['name'], item['type']))
+			select_id = f'{item["name"].replace(" ", "_")}'
+			data_value = min_search_coverage([item['name']] + [item['power']] + [item['notes']])
+			t = TABLE(COL(Class='first_column') + COL(Class='second_column') + COL(), Class='onehundred borders', Id=select_id, data_value=data_value)
+			t <= TR(TH(INPUT(type='checkbox', Id=f'c-{select_id}', Class="save")) + TH(item['name']) + TH(item['tier']))
+			t <= TR(TH(item['type']) + TD(item['power'], rowspan=2) + TD(f"Artifact Power: {item['artifact']}" if item['artifact'] else ' '))
+			t <= TR(TH(item['subtype']) + TD(f"Rune Power: {item['rune']}" if item['rune'] else ' '))
+			if item['notes']:
+				t <= TR(TH(item['notes'], colspan=3))
+			t <= TR(TH(item['flavor'], colspan=3))
+			s <= t
+		doc['artifacts'] <= s
+
 	# set up nodes list
 	t = TABLE(COL(Class='node_column') + COL(), Class='onehundred borders')
 	t <= TR(TH("Node") + TH('Location(s)'))

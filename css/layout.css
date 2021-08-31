@@ -191,6 +191,10 @@ option {
     white-space: nowrap;
 }
 
+.second_column {
+    width: 65%;
+}
+
 .node_column {
     width: 70%;
     word-wrap: break-word;
@@ -213,6 +217,15 @@ option {
 }
 .entropy {
     background-color: rgb(40, 0, 40);
+}
+.weapon {
+    background-color: rgb(30, 30, 30);
+}
+.armor {
+    background-color: rgb(20, 20, 20);
+}
+.jewelry {
+    background-color: rgb(10, 10, 10);
 }
 
 td > div {
