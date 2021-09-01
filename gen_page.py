@@ -105,13 +105,13 @@ There’s no extra checks for this one so can precast it before combat if you wa
 			nodes[item['power']].append((domain, item['name'], item['type']))
 			select_id = f'{item["name"].replace(" ", "_")}'
 			data_value = min_search_coverage([item['name']] + [item['power']] + [item['notes']])
-			t = TABLE(COL(Class='first_column') + COL(Class='second_column') + COL(), Class='onehundred borders', Id=select_id, data_value=data_value)
+			t = TABLE(COL(Class='first_column') + COL(Class='second_column') + COL(), Class='onehundred borders', Id=select_id, data_value=data_value, data_points=0)
 			t <= TR(TH(INPUT(type='checkbox', Id=f'c-{select_id}', Class="save")) + TH(item['name']) + TH(item['tier']))
 			t <= TR(TH(item['type']) + TD(item['power'], rowspan=2) + TD(f"Artifact Power: {item['artifact']}" if item['artifact'] else ' '))
 			t <= TR(TH(item['subtype']) + TD(f"Rune Power: {item['rune']}" if item['rune'] else ' '))
 			if item['notes']:
 				t <= TR(TH(item['notes'], colspan=3))
-			t <= TR(TH(item['flavor'], colspan=3))
+			t <= TR(TD() + TH(item['flavor']) + TD())
 			s <= t
 		doc['artifacts'] <= s
 

@@ -13,13 +13,18 @@ def load_page():
 	doc["clear_keywords"].bind("click", clear_keywords)
 
 	# if there is a query string try to load it
-	if any(x in doc.query for x in ['asc', 'nodes']):
+	if any(x in doc.query for x in ['asc', "Force", "Life", "Form", "Inertia", "Entropy", 'arts']):
 		doc['always_show'].value = 'yes'
 		if 'asc' in doc.query:
 			v_asc = r2v(doc.query['asc'])
 			for t_asc in asc:
 				if asc[t_asc]['val'] & v_asc:
 					doc[t_asc].checked = True
+		if 'arts' in doc.query:
+			v_asc = r2v(doc.query['arts'])
+			for t_art in artifact_lookup:
+				if t_art & v_asc:
+					doc[f"c-{artifact_lookup[t_art]}"].checked = True
 		for section in ["Force", "Life", "Form", "Inertia", "Entropy"]:
 			if section in doc.query:
 				v_nodes = r2v(doc.query[section])
@@ -106,19 +111,28 @@ def save_state(ev):
 	gen_have_need(t_asc, t_nodes)
 	# update query string
 	v_asc = 0
+	v_arts = 0
 	for v in t_asc:
-		v_asc |= asc[v]['val']
+		if v in asc:
+			v_asc |= asc[v]['val']
+		else:
+			v_arts |= artifacts[v[2:]]
 	v_nodes = {}
 	for v in t_nodes:
 		num, ele = node_lookup[v]
 		if ele not in v_nodes:
 			v_nodes[ele] = 0
 		v_nodes[ele] |= num
+
 	calc_asc = v2r(v_asc)
 	calc_asc = 'asc=' + calc_asc if calc_asc else ''
+
+	calc_arts = v2r(v_arts)
+	calc_arts = 'arts=' + calc_arts if calc_arts else ''
+
 	calc_node = '&'.join(f"{ele}={v2r(v_nodes[ele])}" for ele in v_nodes)
 
-	window.history.replaceState('', '', f"?{calc_asc}{'&' if calc_asc and calc_node else ''}{calc_node}")
+	window.history.replaceState('', '', f"?{calc_asc}{'&' if calc_asc and calc_arts else ''}{calc_arts}{'&' if calc_arts and calc_node else ''}{calc_node}")
 
 
 # Function handling filtering changes
