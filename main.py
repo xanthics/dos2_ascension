@@ -180,6 +180,9 @@ def update_page(tar_id=None, tar_type=None):
 		# Only update visibility if keywords is empty
 		if not doc['keywords'].value:
 			# show all hidden table data
+			for el in doc.get(selector="[data-value"):
+				if 'hidden' in el.attrs:
+					del el.attrs['hidden']
 			for el in doc.get(selector=".hidden_class"):
 				el.class_name = el.class_name.replace('hidden_class', '').strip()
 			# change cell emphasis based on dropdown selection
