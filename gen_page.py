@@ -115,16 +115,16 @@ There’s no extra checks for this one so can precast it before combat if you wa
 			s <= t
 		doc['artifacts'] <= s
 
-	# set up nodes list
+	# set up modifiers list
 	t = TABLE(COL(Class='node_column') + COL(), Class='onehundred borders')
-	t <= TR(TH("Node") + TH('Location(s)'))
+	t <= TR(TH("Modifier") + TH('Location(s)'))
 	for node in sorted(nodes):
 		data_value = min_search_coverage(node.split())
 		t <= TR(TD(DIV(node), rowspan=len(nodes[node])) + TD(f"{nodes[node][0][1]}: {nodes[node][0][2]}{'.' + str(nodes[node][0][3]) if len(nodes[node][0]) == 4 else ''}", Class=nodes[node][0][0].lower()), data_value=data_value)
 		for idx in range(1, len(nodes[node])):
 			t <= TR(TD(f"{nodes[node][idx][1]}: {nodes[node][idx][2]}{'.' + str(nodes[node][idx][3]) if len(nodes[node][idx]) == 4 else ''}", Class=nodes[node][idx][0].lower()), data_value=data_value)
 
-	doc['nodes'] <= SECTION(t)
+	doc['modifiers'] <= SECTION(t)
 
 	# working on
 	notes = [
