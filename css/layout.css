@@ -11,6 +11,7 @@ body {
 }
 
 .demphasis > .derpy,
+.demphasis > .pip,
 .demphasis {
     color: rgb(60, 60, 60) !important;
 }
@@ -18,6 +19,11 @@ body {
 .derpy {
     margin: 5px;
     color: rgb(200, 150, 100);
+}
+
+.pip {
+    margin: 5px;
+    color: rgb(150, 100, 200);
 }
 
 .onehundred{
