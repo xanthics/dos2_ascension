@@ -1,5 +1,5 @@
 from browser import document as doc
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, SECTION, DIV, OPTION, BR, COL, H1, BUTTON, P, UL, LI, STRONG, H2
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, SECTION, DIV, OPTION, BR, COL, H1, BUTTON, P, UL, LI, STRONG, H2, A
 from json import load
 from collections import defaultdict
 import re
@@ -20,7 +20,9 @@ def min_search_coverage(items):
 
 def init_notes():
 	# Basic Ascension notes
-	s = SECTION(P("While Ascension provides many bonuses in terms of basic statistical increases (bonus resistances, Attributes, Abilities, etc.), the various “keywords” it grants represent a significant contribution to character build diversification. Ascension keywords generally function like complex Talents that provide a character with some sort of ability that deeply impacts their mode of play (these effects allow the creation of character builds in the true sense, not just different loadouts). Keywords generally provide a base effect that further investment builds upon with various mutators or additional activation conditions. Below you will find a list of the base effects of the available Ascension keywords."))
+	s = SECTION(A("C+P from offical docs on 2021/09/03", href="https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#heading=h.2xtj3l28uhgr") +
+				BR() +
+				P("While Ascension provides many bonuses in terms of basic statistical increases (bonus resistances, Attributes, Abilities, etc.), the various “keywords” it grants represent a significant contribution to character build diversification. Ascension keywords generally function like complex Talents that provide a character with some sort of ability that deeply impacts their mode of play (these effects allow the creation of character builds in the true sense, not just different loadouts). Keywords generally provide a base effect that further investment builds upon with various mutators or additional activation conditions. Below you will find a list of the base effects of the available Ascension keywords."), Class='keyword')
 
 	l_items = [
 		["Abeyance:",
@@ -71,19 +73,18 @@ def init_notes():
 		["Ward:",
 		"When Ward is active, gain +10% to all resistances.",
 		"Basic activation: After you have suffered total damage exceeding 60% of your total Vitality (-0.5% per Constitution over 10, minimum of 20%), activate Ward for 1 turn."],
-		["Wither: ",
+		["Wither:",
 		"Withered reduces the effect of Power by 15% (+2% per your Entropy embodied). Additionally, once per round per target, Wither applies 1 Battered and Harried as it is applied."]
 	]
 
 	for li in l_items:
 		s <= H2(li[0]) + UL(LI(x) for x in li[1:])
-	doc['notes'] <= s
+#	doc['notes'] <= s
 
 	# Note about Pip and Derpy mod changes
 	pip_generic = [
-		"<strong>Any note in this color is specific to Pip's Mod.</strong>  Current as of 30/08/2021.",
+		"<strong>Any note in this color is specific to Pip's Mod.</strong>  Current as of 2021/08/20.",
 		"Opportunist grants 2 free generic reaction charges, up from 1",
-		"Executioner grants 2 AP, up from 1",
 		"""Added a way to recycle Artifacts into new ones; dismantling Artifacts gives you a special item. Consume 2 of them to receive a new Artifact, scaled to your level.<br />
 An old idea that Ameranth had ages ago which I liked. Newbies immediately recycling artifacts that don’t fit their current builds would be a concern with this function, but I don’t imagine new players will be playing my patch.""",
 		"""Made Centurion on-miss activators have no range limit for range weapons, but activations are limited to 1 per round this way<br />
@@ -94,7 +95,7 @@ Apparently, these nodes also work when blocking with a shield. The more you know
 Another band-aid fix; this will not fix their damage issues, but it should make the infused reactions that apply tiered effects or other statuses a nice option, if you’re willing to bank 1 SP to use them. Centurion Ruptured Tendons node might become particularly pog."""
 	]
 	derpy_generic = [
-		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 01/09/2021.",
+		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/03.",
 		"You can also search for derpy to see only his changed nodes.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
 Paucity: Default duration from 1 turn to 2 turns<br />

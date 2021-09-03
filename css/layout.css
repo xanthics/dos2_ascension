@@ -12,8 +12,13 @@ body {
 
 .demphasis > .derpy,
 .demphasis > .pip,
+.demphasis > .keyword,
 .demphasis {
     color: rgb(60, 60, 60) !important;
+}
+
+.keyword {
+    color: rgb(100, 200, 150);
 }
 
 .derpy {
