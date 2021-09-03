@@ -126,8 +126,15 @@ def keyword_title(soup):
 	for keyword in l_items:
 		findkeyword = soup.find_all(text=re.compile(keyword))
 		n_text = '\n'.join(l_items[keyword])
+		p_p_p_parent = None
 		for comment in findkeyword:
-			fixed_text = comment.replace(keyword, f'<span title="{n_text}" class="keyword">{keyword}</span>')
+			if not p_p_p_parent:
+				p_p_p_parent = comment.parent.parent.parent.parent
+			elif p_p_p_parent == comment.parent.parent.parent.parent:
+				continue
+			else:
+				p_p_p_parent = comment.parent.parent.parent.parent
+			fixed_text = str(comment).replace(keyword, f'<span title="{n_text}" class="keyword">{keyword}</span>', 1)
 			comment.replace_with(bs(fixed_text, "html.parser"))
 
 
