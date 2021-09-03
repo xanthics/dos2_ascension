@@ -14,7 +14,7 @@ body {
 .demphasis > .pip,
 .demphasis > .keyword,
 .demphasis {
-    color: rgb(60, 60, 60) !important;
+    color: rgb(80, 80, 80) !important;
 }
 
 .keyword {

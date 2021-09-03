@@ -150,10 +150,10 @@ def update_state(ev):
 		for el in doc.get(selector="[data-content]"):
 			terms = el.attrs['data-content']
 			if all(x in terms for x in search_terms):
-				if 'hidden_class' in el.class_name:
-					el.class_name = el.class_name.replace('hidden_class', '').strip()
+				if 'demphasis' in el.class_name:
+					el.class_name = el.class_name.replace('demphasis', '').strip()
 			else:
-				el.class_name += ' hidden_class'
+				el.class_name += ' demphasis'
 	else:
 		update_page()
 
@@ -183,8 +183,8 @@ def update_page(tar_id=None, tar_type=None):
 			for el in doc.get(selector="[data-value"):
 				if 'hidden' in el.attrs:
 					del el.attrs['hidden']
-			for el in doc.get(selector=".hidden_class"):
-				el.class_name = el.class_name.replace('hidden_class', '').strip()
+			for el in doc.get(selector=".demphasis"):
+				el.class_name = el.class_name.replace('demphasis', '').strip()
 			# change cell emphasis based on dropdown selection
 			for el in doc.get(selector="select.save"):
 				el_idx = -1 if el.value == 'Any' else int(el.value)
