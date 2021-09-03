@@ -125,7 +125,7 @@ def keyword_title(soup):
 	}
 	for keyword in l_items:
 		findkeyword = soup.find_all(text=re.compile(keyword))
-		n_text = '<br />'.join(l_items[keyword])
+		n_text = '\n'.join(l_items[keyword])
 		for comment in findkeyword:
 			fixed_text = comment.replace(keyword, f'<span title="{n_text}" class="keyword">{keyword}</span>')
 			comment.replace_with(bs(fixed_text, "html.parser"))
