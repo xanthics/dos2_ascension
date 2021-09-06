@@ -175,7 +175,7 @@ def init_page():
 
 	# add core nodes
 	for c_node in ['Force', 'Entropy', 'Form', 'Inertia', 'Life']:
-		t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=c_node, Id=f"Core_{c_node}", data_points=1)
+		t = TABLE(COL(Class='first_column') + COL() + COL(), Class='onehundred borders', data_value=f"core {c_node.lower()}", Id=f"Core_{c_node}", data_points=1)
 		t <= TR(TH(INPUT(type='checkbox', Id=f'c-Core_{c_node}', Class="save")) + TH(f"Core: {c_node}") + TH(f"Tier 0"))
 		t <= TR(TH() + TH(f"Required: None") + TH(f"Completion: 1 {c_node}"))
 		t <= TR(TH("One of the 5 central nodes.", colspan=3))

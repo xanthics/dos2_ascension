@@ -129,13 +129,9 @@ def keyword_title(soup):
 		p_p_p_parent = None
 		for comment in findkeyword:
 			c_parent = comment.parent
-			if not c_parent:
-				continue
 			while c_parent.name not in ['table', 'section']:
 				c_parent = c_parent.parent
-			if not p_p_p_parent:
-				p_p_p_parent = c_parent
-			elif p_p_p_parent == c_parent:
+			if p_p_p_parent == c_parent:
 				continue
 			else:
 				p_p_p_parent = c_parent
