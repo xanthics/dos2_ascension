@@ -95,23 +95,17 @@ Apparently, these nodes also work when blocking with a shield. The more you know
 Another band-aid fix; this will not fix their damage issues, but it should make the infused reactions that apply tiered effects or other statuses a nice option, if you’re willing to bank 1 SP to use them. Centurion Ruptured Tendons node might become particularly pog."""
 	]
 	derpy_generic = [
-		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/03.",
+		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/10 Part 3.",
 		"You can also search for derpy to see only his changed nodes.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
 Paucity: Default duration from 1 turn to 2 turns<br />
 Defiance: Default duration from 1 turn to 2 turns<br />
 Mercy: Radius from 8m to 13m""",
 		"""<strong>T1 Nodes</strong><br />
-Ascension nodes that previously granted the Inconspicuous talent have been replaced with Opportunist and now apply up to Subjugated II to every enemy within 3m of yourself<br />
-They all use a once per round hidden limit so don’t bother trying to abuse CD resets<br />
-They also require to be in combat<br />
-Ascension nodes that previously granted the Pawn talent have been replaced with Escapist and now also recover 2AP. Expanded them to work with Staff of Magus too<br />
-They all use a once per round hidden limit so don’t bother trying to abuse CD resets<br />
-They also require to be in combat<br />
+Ascension nodes that previously granted the Inconspicuous talent have been replaced with Opportunist and now apply up to Subjugated II to every enemy within 3m of yourself. They also require to be in combat<br />
+Ascension nodes that previously granted the Pawn talent have been replaced with Escapist. They also require to be in combat<br />
 Casting Escapist -> Weapon skill will refresh Escapist CD. This is intended<br />
-Ascension nodes that previously granted the Savage Sortilege talent have been increased from 1 turn to 2 turns and also recover 2AP<br />
-There’s no extra checks for this one so can precast it before combat if you want<br />
-T1 Ascension effects that granted 2 AP recovery on weapon skills are now unable to go over 2 AP. They use the same logic as Finesse. Unfortunately this does not work on the first cast of the fight. This is due to an incompatibility with Epip Encounters. Will try and sort it tomorrow"""
+Ascension nodes that previously granted the Savage Sortilege talent have been increased from 1 turn to 2 turns. They also require to be in combat"""
 	]
 
 	s = SECTION(Class='pip')
