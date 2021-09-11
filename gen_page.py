@@ -95,7 +95,7 @@ Apparently, these nodes also work when blocking with a shield. The more you know
 Another band-aid fix; this will not fix their damage issues, but it should make the infused reactions that apply tiered effects or other statuses a nice option, if you’re willing to bank 1 SP to use them. Centurion Ruptured Tendons node might become particularly pog."""
 	]
 	derpy_generic = [
-		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/10 Part 3.",
+		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/11 Part 2.",
 		"You can also search for derpy to see only his changed nodes.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
 Paucity: Default duration from 1 turn to 2 turns<br />
