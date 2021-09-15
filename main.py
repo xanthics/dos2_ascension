@@ -37,14 +37,21 @@ def load_page():
 
 	# Make it so navigation buttons work
 	@bind('.page', 'click')
-	def change_page(ev):
-		l_val = ev.target['data-id']
+	def change_page(ev, style=0):
+		if style == 0:
+			l_val = ev.target['data-id']
+		else:
+			l_val = ev
 		doc[l_val].style.display = 'block'
 		doc[f'b_{l_val}'].class_name = 'current_tab page'
 		idx = pages.index(l_val)
 		for i in pages[:idx] + pages[idx+1:]:
 			doc[i].style.display = 'none'
 			doc[f'b_{i}'].class_name = 'page'
+		save_state()
+
+	if 'page' in doc.query:
+		change_page(doc.query['page'], 1)
 
 
 # update have and need
@@ -103,36 +110,37 @@ def r2v(n):
 
 # Function handling filtering changes
 @bind('.save', 'input')
-def save_state(ev):
-	update_page(ev.target.id, ev.target.type)
+def save_state(ev=None):
+	if not ev:
+		update_page()
+	else:
+		update_page(ev.target.id, ev.target.type)
 	# calculate required and generated ascendancy resources
 	t_asc = [el.id for el in doc.get(selector=":checked") if el.id]
 	t_nodes = [f"{el.id}{el.value}" for el in doc.get(selector="select.save") if el.value != 'Any']
 	gen_have_need(t_asc, t_nodes)
 	# update query string
-	v_asc = 0
-	v_arts = 0
+	v_keys = {'asc': 0, 'arts': 0, }
 	for v in t_asc:
 		if v in asc:
-			v_asc |= asc[v]['val']
+			v_keys['asc'] |= asc[v]['val']
 		else:
-			v_arts |= artifacts[v[2:]]
-	v_nodes = {}
+			v_keys['arts'] |= artifacts[v[2:]]
 	for v in t_nodes:
 		num, ele = node_lookup[v]
-		if ele not in v_nodes:
-			v_nodes[ele] = 0
-		v_nodes[ele] |= num
+		if ele not in v_keys:
+			v_keys[ele] = 0
+		v_keys[ele] |= num
 
-	calc_asc = v2r(v_asc)
-	calc_asc = 'asc=' + calc_asc if calc_asc else ''
+	calc_node = '&'.join(f"{ele}={v2r(v_keys[ele])}" for ele in v_keys if v_keys[ele])
 
-	calc_arts = v2r(v_arts)
-	calc_arts = 'arts=' + calc_arts if calc_arts else ''
+	cur_page = ''
+	for page in ['modifiers', 'artifacts', 'notes']:  # 'ascensions' is default so no key if on that page
+		if doc[page].style.display == 'block':
+			cur_page = f"page={page}"
+			break
 
-	calc_node = '&'.join(f"{ele}={v2r(v_nodes[ele])}" for ele in v_nodes)
-
-	window.history.replaceState('', '', f"?{calc_asc}{'&' if calc_asc and calc_arts else ''}{calc_arts}{'&' if calc_arts and calc_node else ''}{calc_node}")
+	window.history.replaceState('', '', f"?{cur_page}{'?' if cur_page and calc_node else ''}{calc_node}")
 
 
 # Function handling filtering changes
