@@ -81,7 +81,7 @@ def gen_have_need(t_asc=None, t_nodes=None):
 def v2r(n):
 	base = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_'
 	if n == 0:
-		return base[0]
+		return ''
 	b = len(base)
 	digits = ''
 	while n > 0:
