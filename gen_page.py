@@ -83,7 +83,7 @@ def init_notes():
 
 	# Note about Pip and Derpy mod changes
 	pip_generic = [
-		"<strong>Any note in this color is specific to Pip's Mod.</strong>  Current as of 2021/08/20.",
+		"<strong>Any note in this color is specific to Pip's Mod.</strong>  Current as of 2021/09/12.",
 		"Opportunist grants 2 free generic reaction charges, up from 1",
 		"""Added a way to recycle Artifacts into new ones; dismantling Artifacts gives you a special item. Consume 2 of them to receive a new Artifact, scaled to your level.<br />
 An old idea that Ameranth had ages ago which I liked. Newbies immediately recycling artifacts that don’t fit their current builds would be a concern with this function, but I don’t imagine new players will be playing my patch.""",
@@ -95,7 +95,7 @@ Apparently, these nodes also work when blocking with a shield. The more you know
 Another band-aid fix; this will not fix their damage issues, but it should make the infused reactions that apply tiered effects or other statuses a nice option, if you’re willing to bank 1 SP to use them. Centurion Ruptured Tendons node might become particularly pog."""
 	]
 	derpy_generic = [
-		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/11 Part 2.",
+		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/16.",
 		"You can also search for derpy to see only his changed nodes.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
 Paucity: Default duration from 1 turn to 2 turns<br />
