@@ -138,7 +138,8 @@
           ],
           [
             "Apply Withered for 2 turns when you apply tier II or III of Slowed or Weakened to an enemy",
-            "+1 Power"
+            "+1 Power",
+            "<br><span class=\"derpy\">Now limited to once per round, per target, per status</span>"
           ],
           [
             "+15% summon Vitality restored from Voracity",
@@ -228,7 +229,8 @@
             "+1 Perseverance"
           ],
           [
-            "+1 Retribution"
+            "+1 Retribution",
+            "<br><span class=\"derpy\">Swapped Retribution to Ranged</span>"
           ],
           [
             "+1 Two-Handed"
@@ -239,7 +241,8 @@
             "Occultist reactions can be performed when an ally applies tier II or III of Subjugated or Terrified to an enemy you can see"
           ],
           [
-            "Predator reactions can be performed when an ally perfoms an Attack of Opportunity on an enemy you can see"
+            "Predator reactions can be performed when an ally perfoms an Attack of Opportunity on an enemy you can see",
+            "<br><span class=\"derpy\">Changed to: Predator reactions can be performed, once per round, when an enemy you can see is damaged to zero Physical or Magic Armor, or while under 50% Vitality.</span>"
           ]
         ],
         [
@@ -392,7 +395,8 @@
             "Once per turn, when damage from an enemy causes you to drop to 35% Vitality or below, activate Vitality Void"
           ],
           [
-            "When you apply Bleeding to an enemy, apply Withered for 1 turn"
+            "When you apply Bleeding to an enemy, apply Withered for 1 turn",
+            "<br><span class=\"derpy\">Now limited to once per round, per target and increased Wither duration to 2 turns</span>"
           ],
           [
             "+10% summon Critical Chance",
@@ -409,7 +413,7 @@
           ],
           [
             "Conjure Incarnate summons an Incarnate Champion",
-            "<br><span class=\"derpy\">Now also autoinfuses the Incarnate</span>"
+            "<br><span class=\"derpy\">Now also autoinfuses the Incarnate and grants +4 Memory</span>"
           ],
           [
             "If you do not already have this benefit, increase your summon limit by 1"
@@ -489,14 +493,16 @@
         ],
         [
           [
-            "Paucity activates for your summons whenever it activates for you. Paucity grants: +10% Accuracy, +10% damage, and +10 Initiative"
+            "Paucity activates for your summons whenever it activates for you. Paucity grants: +10% Accuracy, +10% damage, and +10 Initiative",
+            "<br><span class=\"derpy\">Swapped Paucity benefits to +1.0 Movement, +15% damage, and +20% Critical Chance</span>"
           ],
           [
             "If you know Summon Boneshaped Skitterer, Predator reactions no longer perform a basic attack, and instead summon a Boneshaped Skitterer adjacent to the target. For this effect, your Predator reaction range becomes 13m, unless already higher",
             "<br><span class=\"derpy\">Once per round, Predator reactions also summon a Boneshaped Skitterer adjacent to the target</span>"
           ],
           [
-            "While performing a Predator reaction, gain +20% damage per corpse you can see, up to a maximum of 100%"
+            "While performing a Predator reaction, gain +20% damage per corpse you can see, up to a maximum of 100%",
+            "<br><span class=\"derpy\">Increased cap to 200% from 100%</span>"
           ]
         ]
       ],
@@ -573,7 +579,8 @@
             "Occultist reactions can be performed when an ally applies Wither to an enemy you can see; once per enemy, per round"
           ],
           [
-            "Apply Withered for 2 turns when you afflict an enemy with Subjugated or Terrified"
+            "Apply Withered for 2 turns when you afflict an enemy with Subjugated or Terrified",
+            "<br><span class=\"derpy\">Now limited to once per round, per target, per status</span>"
           ]
         ],
         [
@@ -584,7 +591,8 @@
             "Withered applies up to Vulnerable II for 2 turns"
           ],
           [
-            "If you have 4 or more stacks of Adaptation when you perform a basic attack on an enemy with Withered, lose 1 stack of Adaptation and emulate the effects of Vampiric Touch"
+            "If you have 4 or more stacks of Adaptation when you perform a basic attack on an enemy with Withered, lose 1 stack of Adaptation and emulate the effects of Vampiric Touch",
+            "<br><span class=\"derpy\">Increased damage to 125% from 100%</span>"
           ]
         ]
       ],
@@ -755,7 +763,7 @@
           ],
           [
             "If you have 7 or more stacks of Adaptation when you perform an Occultist reaction, lose 2 stacks of Adaptation and emulate the effects of Infect",
-            "<br><span class=\"derpy\">7 stacks to 4 stacks</span>"
+            "<br><span class=\"derpy\">7 stacks to 5 stacks, payment to 3 stacks from 2</span>"
           ],
           [
             "Learn Summon Accursed Vessel, which functions identically to Summon Bloated Corpse, but does not require a corpse and generates a corpse when it uses Vile Burst. If you have Paucity active, Accursed Vessel's detonation applies Wither for 2 turns"
@@ -835,15 +843,15 @@
         [
           [
             "Predator reactions gain +20% Critical Chance. If an enemy dies and leaves a viable corpse during the reaction, create a Bloated Corpse (as per Raise Bloated Corpse) from its corpse",
-            "<br><span class=\"derpy\">Changed Bloated Corpse to Accursed Vessel</span>"
+            "<br><span class=\"derpy\">Change to: Predator reactions gain +20% Critical Chance, and twice per round, emulate the effects of Corpse Explosion that only harms enemies, and once per round, create a corpse</span>"
           ],
           [
             "Vitality Void summons a Boneshaped Skitterer on up to 2 corpses within 5m",
-            "<br><span class=\"derpy\">Once per round, summon an Empowered Boneshaped Skitterer on up to 2 corpses within 8m. Empowered Boneshaped Skitterer has improved stats, AOO and double death damage.</span>"
+            "<br><span class=\"derpy\">Once per round, summon an Empowered Boneshaped Skitterer on up to 2 corpses within 8m. Empowered Boneshaped Skitterer has improved stats, points into Necromancer, Attack of Opportunity, and double death damage.</span>"
           ],
           [
             "Any non-zero amount of damage you deal applies at least two stacks of Battered or Harried, but you have -65% damage",
-            "<br><span class=\"derpy\">Once per round, per target, apply two stacks of Battered and Harried.  Removed the -65% damage and added +10 Wits</span>"
+            "<br><span class=\"derpy\">Once per round, per target, apply two stacks of Battered and Harried, Removed the -65% damage and added +10 Wits</span>"
           ]
         ]
       ],
@@ -898,7 +906,8 @@
         ],
         [
           [
-            "When you or your summons explode a corpse, apply Withered for 2 turns to enemies within 3m of the corpse"
+            "When you or your summons explode a corpse, apply Withered for 2 turns to enemies within 3m of the corpse",
+            "<br><span class=\"derpy\">radius to 5m and Wither duration to 1 turn</span>"
           ],
           [
             "When you apply Acid or Bleeding to an enemy, apply 1 stack of Battered as well. When you apply Poisoned or Suffocating to an enemy, apply 1 stack of Harried as well"
@@ -910,7 +919,8 @@
         ],
         [
           [
-            "Paucity grants +2.5% Power and Wits per Entropy, Force, and Form"
+            "Paucity grants +2.5% Power and Wits per Entropy, Force, and Form",
+            "<br><span class=\"derpy\">Swapped Wits to Finesse</span>"
           ],
           [
             "Withered applies -2.5% accuracy per Entropy, Force, and Form"
@@ -918,10 +928,12 @@
         ],
         [
           [
-            "Paucity grants a 13m aura that applies -1% Accuracy and -1.5% Movement Speed per Leadership to enemies"
+            "Paucity grants a 13m aura that applies -1% Accuracy and -1.5% Movement Speed per Leadership to enemies",
+            "<br><span class=\"derpy\">Changed to: Paucity grants +1 AP recovery and a 13m aura that applies -1.5% Accuracy and Movement Speed per Entropy, Force, and Form to enemies</span>"
           ],
           [
-            "Withered applies Corroding for 1 turn to enemies within 2m of its target. Withered applies -10% Constitution (-1% per Entropy, Force, and Form)"
+            "Withered applies Corroding for 1 turn to enemies within 2m of its target. Withered applies -10% Constitution (-1% per Entropy, Force, and Form)",
+            "<br><span class=\"derpy\">removed Constitution reduction</span>"
           ],
           [
             "Learn Haruspicy: 2 AP, 1 turn cooldown, 13m range, pay 50% of your maximum Vitality to explode an unexploded corpse and gain 1 SP"
@@ -992,7 +1004,8 @@
             "Adaptation activates when your Paucity would activate, instead of Paucity"
           ],
           [
-            "Learn Corpse Mastery: 2 AP, 3 turn cooldown, 13m range, move the corpses of non-boss characters within 4m from a point that you can see to the closest valid points within 3m of you. Teleportation fails if no space large enough for the corpse can be found"
+            "Learn Corpse Mastery: 2 AP, 3 turn cooldown, 13m range, move the corpses of non-boss characters within 4m from a point that you can see to the closest valid points within 3m of you. Teleportation fails if no space large enough for the corpse can be found",
+            "<br><span class=\"derpy\">Corpse Mastery now requires combat. AP from 2 to 1 and CD from 3 to 1</span>"
           ],
           [
             "+20% invested Finesse",
@@ -1033,7 +1046,7 @@
             "Instantly summon a Boneshaped Crusher as you enter combat",
             "Boneshaped Crushers do not count against your summon limit, but you may only have one at a time",
             "<br><span class=\"pip\">Boneshaped Crusher now has All-In.  Constitution qualifier from 6 to 9, physical armor from 20 to 60, magic armor from 20 to 30, +10 acc, -15 dodge, power from 5 to 6. Also gave him Battering Ram and 3 Necromancer for rituals.</span>",
-            "<br><span class=\"derpy\">Increased Boneshaped Crusher stats, gave him Necrotheosis and lowered his AP cost from 6 to 4. Boneshaped Crusher now starts with 2 turns of Source Gen and 1 SP</span>"
+            "<br><span class=\"derpy\">Increased Boneshaped Crusher stats, gave him Necrotheosis and lowered his AP cost from 6 to [4,  Boneshaped Crusher now starts with 2 turns of Source Gen and 1 SP, The Boneshaped Crusher skill now requires combat</span>"
           ]
         ],
         []
@@ -1504,7 +1517,8 @@
             "+6% Accuracy"
           ],
           [
-            "+4% Critical Chance"
+            "+4% Critical Chance",
+            "<br><span class=\"derpy\">20% to 10%</span>"
           ],
           [
             "+10% Damage"
@@ -1623,11 +1637,11 @@
           ],
           [
             "If you activate Paucity when you have a dagger equipped, sneak and become invisible until the start of your next turn",
-            "<br><span class=\"derpy\">Changed Invisibility to until end of turn. This works while out-of-turn too. Invis and Sneaking ends if your last action during a turn activated Paucity. Thanks Amer for help</span>"
+            "<br><span class=\"derpy\">Changed Invisibility to until end of turn. This works while out-of-turn too. Invis and Sneaking ends if your last action during a turn activated Paucity. Thanks Amer for help :prayge:</span>"
           ],
           [
             "Source Infusion 1: your next Predator reaction emulates the effects of Fan of Knives",
-            "<br><span class=\"derpy\">1SP to once per round</span>"
+            "<br><span class=\"derpy\">1SP to twice per round</span>"
           ]
         ]
       ],
@@ -1693,7 +1707,7 @@
           ],
           [
             "Once per round, per target, activate Vitality Void after dealing total damage, to a non-summon enemy, exceeding 30% of their total Vitality over a turn",
-            "<br><span class=\"derpy\">30% to 20%</span>"
+            "<br><span class=\"derpy\">30% to 10%</span>"
           ],
           [
             "Elementalist reactions can be performed when an ally directly targets an enemy you can see with a Necromancer or Scoundrel skill. The reaction deals water or air damage, respectively"
@@ -1701,7 +1715,8 @@
         ],
         [
           [
-            "Gain +5% critical chance per stack of Elementalist"
+            "Gain +5% critical chance per stack of Elementalist",
+            "<br><span class=\"derpy\">5% to 3%</span>"
           ],
           [
             "Your Vitality Void applies Acid, Calcifying, and Suffocating for 1 turn"
@@ -1773,7 +1788,8 @@
             "+0.6 Movement Speed"
           ],
           [
-            "Once per round, activate Purity when a non-summon enemy dies"
+            "Once per round, activate Purity when a non-summon enemy dies",
+            "<br><span class=\"derpy\">Now works on any ally or enemy death</span>"
           ]
         ],
         [
@@ -1785,7 +1801,8 @@
             "+7% Damage"
           ],
           [
-            "Purity aura grants: +10% Accuracy, +15% Damage, and +15% Vitality restored from Voracity"
+            "Purity aura grants: +10% Accuracy, +15% Damage, and +15% Vitality restored from Voracity",
+            "<br><span class=\"derpy\">Values doubled but now they only affects yourself</span>"
           ]
         ]
       ],
@@ -1854,7 +1871,8 @@
         ],
         [
           [
-            "Purity grants you +1 AP recovery"
+            "Purity grants you +1 AP recovery",
+            "<br><span class=\"derpy\">Increased AP Recovery to +2 from +1</span>"
           ],
           [
             "Violent Strike gains +5% damage for every 5 Finesse or Strength over 10, whichever is higher, up to 100%",
@@ -1863,14 +1881,15 @@
         ],
         [
           [
-            "When you activate Purity, extend the duration of Source generation by 1. When a non-summon enemy dies, if Purity has remaining cooldown, reduce its remaining cooldown by 1"
+            "When you activate Purity, extend the duration of Source generation by 1. When a non-summon enemy dies, if Purity has remaining cooldown, reduce its remaining cooldown by 1",
+            "<br><span class=\"derpy\">Also lowers Purity CD by 1</span>"
           ],
           [
             "When you perform a Violent Strike, activate Vitality Void"
           ],
           [
             "While in combat, you can never have more than 2 Source Points, but Source Generation grants an additional Source Point each turn",
-            "<br><span class=\"derpy\">Now unable to infuse past SI2 with gear bonuses. Thanks Amer</span>"
+            "<br><span class=\"derpy\">Now unable to infuse past SI2 with gear bonuses</span>"
           ]
         ]
       ],
@@ -1936,7 +1955,8 @@
         ],
         [
           [
-            "Gain +10% damage from Power per stack of Elementalist"
+            "Gain +10% damage from Power per stack of Elementalist",
+            "<br><span class=\"derpy\">Changed to: While performing an Elementalist reaction, you have a 30% chance to duplicate its effects</span>"
           ],
           [
             "Once per round when you activate Vitality Void, teleport each non-boss enemy with Withered within 6m to a position nearest you where they can stand"
@@ -2000,19 +2020,22 @@
           ],
           [
             "Unlock basic activation of Defiance",
-            "Defiance grants +10% Accuracy and Critical Chance"
+            "Defiance grants +10% Accuracy and Critical Chance",
+            "<br><span class=\"derpy\">Doubled values</span>"
           ]
         ],
         [
           [
-            "Activate Paucity when you gain the Berserk status"
+            "Activate Paucity when you gain the Berserk status",
+            "<br><span class=\"derpy\">Swapped Berserk to Challenger or Challenge Won</span>"
           ],
           [
             "If you have Paucity active and a two handed weapon equipped, Vitality Void deals additional damage equal to 1% of your total Vitality per Force"
           ],
           [
             "+20% invested Power",
-            "+20% invested Wits"
+            "+20% invested Wits",
+            "<br><span class=\"derpy\">Swapped Wits to Finesse</span>"
           ]
         ],
         [
@@ -2026,11 +2049,11 @@
         [
           [
             "If you have Paucity, your Assassinate, Fireball, Impalement, Onslaught, and Terrifying Cruelty skills are performed at +1 effective Source Infusion, even if uninfused",
-            "<br><span class=\"derpy\">Changed to Arrow Spray, Incandescent Ray, Impalement, Onslaught and Execute</span>"
+            "<br><span class=\"derpy\">Changed to: Arrow Spray, Incandescent Ray, Impalement, Onslaught, and Throwing Knife</span>"
           ],
           [
             "Source Infusion 1: when you perform a Predator reaction, emulate the effects of Horrid Wilting",
-            "<br><span class=\"derpy\">1SP to once per round</span>"
+            "<br><span class=\"derpy\">1SP to twice per round</span>"
           ],
           [
             "You can no longer apply tier III statuses; if you would apply one, instead gain +90% damage for 2 turns"
@@ -2430,7 +2453,8 @@
             "<br><span class=\"derpy\">Removed the free offhand requirement</span>"
           ],
           [
-            "When you apply Calcifying to an enemy, apply Withered for 1 turn"
+            "When you apply Calcifying to an enemy, apply Withered for 1 turn",
+            "<br><span class=\"derpy\">Now limited to once per round, per target</span>"
           ],
           [
             "+10% summon Accuracy",
@@ -2555,11 +2579,11 @@
           ],
           [
             "If you have 6 or more stacks of Adaptation when you perform an Occultist reaction, lose 1 stack of Adaptation and emulate the effects of Throw Dust",
-            "<br><span class=\"derpy\">6 stacks to 3 stacks</span>"
+            "<br><span class=\"derpy\">6 stacks to 5 stacks, payment to 2 stacks from 1, and now only harms enemies</span>"
           ],
           [
             "Conjure Incarnate summons an Incarnate Champion",
-            "<br><span class=\"derpy\">Now also autoinfuses the Incarnate</span>"
+            "<br><span class=\"derpy\">Now also autoinfuses the Incarnate and grants +4 Memory</span>"
           ],
           [
             "If you do not already have this benefit, increase your summon limit by 1"
@@ -2636,7 +2660,7 @@
           [
             "Unlock basic activation of Defiance",
             "If you already have this activator: activate Defiance at the start of your turn if you have 3 or more non-totem allies within 5m of you. Defiance grants +15% damage",
-            "<br><span class=\"derpy\">Ally req from 3 to 2 and 5m to 8m</span>"
+            "<br><span class=\"derpy\">Ally req from 3 to 2 and 5m to 8m. Increased damage to +30% from +15%</span>"
           ]
         ],
         [
@@ -2655,7 +2679,7 @@
         [
           [
             "If you have 5 or more stacks of Adaptation when you activate Abeyance, pay 1 stack of Adaptation for each enemy you can see within 8m to deal fire damage to it",
-            "<br><span class=\"derpy\">Stacks from 5 to 3 and fire damage multiplier to 150 from 100</span>"
+            "<br><span class=\"derpy\">Stacks from 5 to 3 and fire damage multiplier to 200 from 100</span>"
           ],
           [
             "When Abeyance activates due to an enemy, and you control totems who can see this enemy, you order these totems to retaliate instead of abeying the damage"
@@ -3023,7 +3047,7 @@
           [
             "Occultist activates when you perform a ritual reaction targeting an enemy",
             "+1 free Occultist reaction per round",
-            "<br><span class=\"derpy\">When a non-totem ally performs a ritual reaction, apply your Occultist effects to every enemy within 13m.  Once per round, when an allied totem casts Dimensional Bolt, apply your Occultist effects to every enemy within 13m</span>"
+            "<br><span class=\"derpy\">When an ally performs a ritual reaction, apply your Occultist effects to every enemy within 13m. Once per round, when an allied totem is commanded to attack by The Ritual Ascension, apply your Occultist effects to every enemy within 13m</span>"
           ],
           [
             "If you have a two handed weapon equipped, Withered applies -10% Dodge (-1.5% per Form and Entropy )"
@@ -3053,11 +3077,11 @@
         [
           [
             "Once per turn, when you perform an Occultist reaction on an enemy, your totems attempt to attack it",
-            "<br><span class=\"derpy\">Once per turn, when you perform an Occultist reaction, allied totems cast Dimensional Bolt on your target. This effect does not apply Dazzled. Allied totems that are owned by another character with this effect also cast Dimensional Bolt</span>"
+            "<br><span class=\"derpy\">Once per turn, when you perform an Occultist reaction on an enemy, your totems attempt to attack it.. Allied totems that are owned by another character with this effect also attempt to attack.</span>"
           ],
           [
             "Source Infusion 1: When you cast Cannibalize on a controllable summon that is within 6m of 3 of your own totems, sacrifice those totems and apply Withered for 2 turns to all enemies in combat with you. Then, gain +50% damage while you emulate the effects of Finger of Death on all enemies you can see. Recover 1 SP",
-            "<br><span class=\"derpy\">Changed 6m to 13m, totem req from 3 to 2, FoD to Horrid Wilting and \u201cenemies you can see\u201d from 20m to 40m</span>"
+            "<br><span class=\"derpy\">Changed 6m to 13m, totem req from 3 to 2, FoD to Horrid Wilting and \u201cenemies you can see\u201d from 20m to 30m</span>"
           ],
           [
             "Damage cannot kill you. If you fall to 1 Vitality or below, sacrifice your oldest uncontrolled summon to return to 20% Vitality; if you have none, sacrifice your oldest controlled summon instead; if you have none, you die"
@@ -3123,7 +3147,7 @@
           ],
           [
             "Once per round, if you have a free offhand when you perform a Centurion reaction, emulate the effects of Silencing Stare",
-            "<br><span class=\"derpy\">Removed the free OH requirement</span>"
+            "<br><span class=\"derpy\">Removed the free OH requirement and is now twice per round</span>"
           ],
           [
             "+20% invested Constitution",
@@ -3438,7 +3462,8 @@
           ],
           [
             "Centurion reactions can be performed when an enemy you can see within weapon range (up to 5m away) hits a non-self ally with a basic attack or spell",
-            "+1 Strength"
+            "+1 Strength",
+            "<br><span class=\"derpy\">Removed the once per round no limit effect and increased base range to 7m from 5m</span>"
           ]
         ],
         [
@@ -3625,7 +3650,8 @@
         ],
         [
           [
-            "Centurion reactions can be performed when an enemy you can see within weapon range (up to 5m away) hits a non-self ally with a basic attack or spell"
+            "Centurion reactions can be performed when an enemy you can see within weapon range (up to 5m away) hits a non-self ally with a basic attack or spell",
+            "<br><span class=\"derpy\">Removed the once per round no limit effect and increased base range to 7m from 5m</span>"
           ],
           [
             "When you perform your third Celestial and/or Centurion reaction in a single round, activate Ward and extend Source Generation by 1 turn"
@@ -3643,7 +3669,8 @@
             "When you perform a Centurion reaction, activate Violent Strike and gain +20% damage (+3% per invested Strength) during the reaction"
           ],
           [
-            "Your Ward grants Volatile Armor: 15% of Armor damage taken is dealt to others within 3m as physical damage"
+            "Your Ward grants Volatile Armor: 15% of Armor damage taken is dealt to others within 3m as physical damage",
+            "<br><span class=\"derpy\">Clarified the tooltip to state that it's 3m and not 2m, 15% to 25%, damage is now irresistible</span>"
           ]
         ]
       ],
@@ -3895,14 +3922,15 @@
         ],
         [
           [
-            "Twice per round, if you have a shield equipped when Abeyance activates, emulate the effects of Shields Up"
+            "Twice per round, if you have a shield equipped when Abeyance activates, emulate the effects of Shields Up",
+            "<br><span class=\"derpy\">Increased limit to twice per round. Will not perform an animation anymore if you also have The Arena [5, 1</span>"
           ],
           [
             "Once per round, your Centurion reaction emulates the effects of Battle Stomp instead of performing a basic attack. If normally less than 10m, Centurion's range becomes 10m for this reaction",
             "<br><span class=\"pip\">Centurion Battlestomp can now only be cast if the target is at <10m, and does not consume the ranged charge</span>"
           ],
           [
-            "<span class=\"derpy\">Once per round, your Centurion reaction emulates the effects of Whirlwind within 2m of the target instead of performing a basic attack. If normally less than 13m, Centurion's range becomes 13m for this reaction. This effect still counts as a basic attack</span>"
+            "<span class=\"derpy\">Once per round, your Centurion reaction emulates the effects of Whirlwind within 2m of the target instead of performing a basic attack. If normally less than 13m, Centurion's range becomes 13m for this reaction. This effect still counts as a basic melee attack</span>"
           ]
         ]
       ],
@@ -3952,7 +3980,8 @@
           ],
           [
             "Unlock basic activation of Defiance",
-            "Defiance grants +10% Dodge and +2% Increased Battered and Harried Threshold"
+            "Defiance grants +10% Dodge and +2% Increased Battered and Harried Threshold",
+            "<br><span class=\"derpy\">Increased dodge to +20% from +10%, Replaced B/H threshold with +20% Accuracy</span>"
           ]
         ],
         [
@@ -3969,22 +3998,26 @@
         ],
         [
           [
-            "Centurion reactions apply up to tier II of Ataxia and Squelched for 1 turn"
+            "Centurion reactions apply up to tier II of Ataxia and Squelched for 1 turn",
+            "<br><span class=\"derpy\">Increased duration to 2 turns from 1, Now also grants +10% Critical Chance per enemy within 5m, while performing Centurion reactions</span>"
           ],
           [
-            "If you have Prosperity, your Source Infusions apply at +1 effective infusion for Aspect of the Bull and Heart of Steel; these statuses now grant +10% Finesse and Wits"
+            "If you have Prosperity, your Source Infusions apply at +1 effective infusion for Aspect of the Bull and Heart of Steel; these statuses now grant +10% Finesse and Wits",
+            "<br><span class=\"derpy\">Replaced Wits with Power</span>"
           ]
         ],
         [
           [
             "Centurion reactions become 4m Whirlwinds",
-            "<br><span class=\"derpy\">Whirlwind 4m to 5m</span>"
+            "<br><span class=\"derpy\">Whirlwind 4m to 5m, Adjusted Whirlwind efx to properly match a 5m radius, Adjusted efx timing to better sync with Whirlwind cast animation, Default Centurion range is increased to 5m so it matches Whirlwind, Also counts as a melee hit, aka can proc Sparks</span>"
           ],
           [
-            "While you have Prosperity, gain an Empowered Bouncing Shield skill that costs 2AP and has a 1 turn cooldown"
+            "While you have Prosperity, gain an Empowered Bouncing Shield skill that costs 2AP and has a 1 turn cooldown",
+            "<br><span class=\"derpy\">Empowered Bouncing shield now uses 150% of Shield's Physical armor and can bounce up to 3 times within 8m</span>"
           ],
           [
-            "Wearing a shield no longer decreases your damage gain from Power"
+            "Wearing a shield no longer decreases your damage gain from Power",
+            "<br><span class=\"derpy\">Also grants +10 Power</span>"
           ]
         ]
       ],
@@ -4055,7 +4088,7 @@
         [
           [
             "Once per round, Celestial reactions performed on enemies emulate the effects of Pressure Spike and Winter Blast",
-            "<br><span class=\"derpy\">Removed once per round limit</span>"
+            "<br><span class=\"derpy\">Twice per round, Celestial reactions performed on enemies emulate the effects of Pressure Spike and Winter Blast on every visible enemy within 13m of the target</span>"
           ],
           [
             "Ward grants +3% to elemental maximum resistances and +7% to physical and piercing resistance"
@@ -4534,7 +4567,8 @@
             "Elementalist reactions can be performed when an ally performs a Centurion reaction or applies Weakened III. The reaction deals air or water damage, respectively"
           ],
           [
-            "If you already have 3 stacks of Elementalist or more when you perform an Elementalist reaction, activate Prosperity for 1 turn, regardless of your Vitality"
+            "If you already have 3 stacks of Elementalist or more when you perform an Elementalist reaction, activate Prosperity for 1 turn, regardless of your Vitality",
+            "<br><span class=\"derpy\">Added a once per round check</span>"
           ]
         ],
         [
@@ -4622,7 +4656,8 @@
         [
           [
             "Unlock basic activation of Prosperity",
-            "Source Infusion 1: When you perform Flurry, activate Prosperity for 2 turns, regardless of your Vitality"
+            "Source Infusion 1: When you perform Flurry, activate Prosperity for 2 turns, regardless of your Vitality",
+            "<br><span class=\"derpy\">now also works with All In, Staff of Magus, and Sucker Punch</span>"
           ],
           [
             "When reduced to 30% Vitality (+1.5% per Life) or below, activate Purity",
@@ -4733,7 +4768,7 @@
           ],
           [
             "Source Infusion 1: your next Purity activation emulates the effects of Spontaneous Combustion on enemies you can see within 10m",
-            "<br><span class=\"derpy\">1SP Combustion to fire damage with a multiplier of 100 to every enemy within 8m</span>"
+            "<br><span class=\"derpy\">1SP Combustion to fire damage with a multiplier of 200 to every enemy within 8m</span>"
           ]
         ]
       ],
@@ -4816,11 +4851,12 @@
             "<br><span class=\"derpy\">5% to 10%</span>"
           ],
           [
-            "When you remove 3 stacks of Battered and/or Harried with Benevolence, activate Purity, or if it is on cooldown, reduce its remaining cooldown by 1"
+            "When you remove 3 stacks of Battered and/or Harried with Benevolence, activate Purity, or if it is on cooldown, reduce its remaining cooldown by 1",
+            "<br><span class=\"derpy\">the CD reduction effect is now limited to once per round</span>"
           ],
           [
             "When an ally performs a Celestial reaction on you, lose 1 stack of Elementalist",
-            "<br><span class=\"derpy\">Now grants 3 Elementalist stacks as long as you have at least 1 stack</span>"
+            "<br><span class=\"derpy\">Upon reaching 10 stacks of Elementalist, spend 5 stacks to activate Purity, or if it's on cooldown, reduce its remaining cooldown by 1.</span>"
           ]
         ]
       ],
@@ -4899,7 +4935,8 @@
             "<br><span class=\"derpy\">Changed Magic Shell to Regeneration for 2 turns on living characters, and Poisoned on undead characters</span>"
           ],
           [
-            "If you are affected by Purity, once per round when you perform a Violent Strike, emulate the effects of Glaciate and Ignition"
+            "If you are affected by Purity, once per round when you perform a Violent Strike, emulate the effects of Glaciate and Ignition",
+            "<br><span class=\"derpy\">Does not require Purity anymore</span>"
           ]
         ]
       ],
@@ -5062,8 +5099,7 @@
             "<br><span class=\"derpy\">1SP to once per round and now harms enemies only</span>"
           ],
           [
-            "When you activate Purity, gain Blinding Radiance for 2 turns. -1 turn Purity cooldown",
-            "<br><span class=\"derpy\">-1 turn turn to -2 turns Purity CD</span>"
+            "When you activate Purity, gain Blinding Radiance for 2 turns. -1 turn Purity cooldown"
           ]
         ],
         [

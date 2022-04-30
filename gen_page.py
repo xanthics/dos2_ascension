@@ -86,26 +86,30 @@ def init_notes():
 		"<strong>Any note in this color is specific to Pip's Mod.</strong>  Current as of 2021/09/12.",
 		"Opportunist grants 2 free generic reaction charges, up from 1",
 		"""Added a way to recycle Artifacts into new ones; dismantling Artifacts gives you a special item. Consume 2 of them to receive a new Artifact, scaled to your level.<br />
-An old idea that Ameranth had ages ago which I liked. Newbies immediately recycling artifacts that don’t fit their current builds would be a concern with this function, but I don’t imagine new players will be playing my patch.""",
+An old idea that Ameranth had ages ago which I liked. Newbies immediately recycling artifacts that don't fit their current builds would be a concern with this function, but I don't imagine new players will be playing my patch.""",
 		"""Made Centurion on-miss activators have no range limit for range weapons, but activations are limited to 1 per round this way<br />
 No height range bonus is applied.<br />
 Apparently, these nodes also work when blocking with a shield. The more you know!""",
 		"Elementalist inflicts half as much self-damage, and deals 110% damage, up from 90%. DR made the self-damage decrease very justifiable.",
 		"""Made all infused reactions (except for Nymph SP transfer, Ritual and Celestial resurrect) refund their SP cost<br />
-Another band-aid fix; this will not fix their damage issues, but it should make the infused reactions that apply tiered effects or other statuses a nice option, if you’re willing to bank 1 SP to use them. Centurion Ruptured Tendons node might become particularly pog."""
+Another band-aid fix; this will not fix their damage issues, but it should make the infused reactions that apply tiered effects or other statuses a nice option, if you're willing to bank 1 SP to use them. Centurion Ruptured Tendons node might become particularly pog."""
 	]
 	derpy_generic = [
-		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2021/09/16.",
+		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2022/04/29.",
 		"You can also search for derpy to see only his changed nodes.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
+Spellcaster's Finesse: Now also works on Polymorph skills and doesn't remove Finesse's AP recovery effect anymore<br />
 Paucity: Default duration from 1 turn to 2 turns<br />
-Defiance: Default duration from 1 turn to 2 turns<br />
-Mercy: Radius from 8m to 13m""",
+Defiance: Default duration from 1 turn to 2 turns, Now also activates at the end of your turn if you are within 5m of at least two enemies<br />
+Mercy: Radius from 8m to 13m<br />
+Purity: Added back the Purity aura owner icon, Changed Purity Cooldown icon so it's easier to differentiate between them<br />
+Vitality Void: Changed damage to Physical from Piercing
+""",
 		"""<strong>T1 Nodes</strong><br />
-Ascension nodes that previously granted the Inconspicuous talent have been replaced with Opportunist and now apply up to Subjugated II to every enemy within 3m of yourself. They also require to be in combat<br />
-Ascension nodes that previously granted the Pawn talent have been replaced with Escapist. They also require to be in combat<br />
+Ascension nodes that previously granted the Inconspicuous talent have been replaced with Opportunist for 2 turns, and now apply up to Subjugated II to every enemy within 5m of yourself. They also require to be in combat<br />
+Ascension nodes that previously granted the Pawn talent have been replaced with Escapist for 2 turns. They also require to be in combat<br />
 Casting Escapist -> Weapon skill will refresh Escapist CD. This is intended<br />
-Ascension nodes that previously granted the Savage Sortilege talent have been increased from 1 turn to 2 turns. They also require to be in combat"""
+Ascension nodes that previously granted the Savage Sortilege talent have been increased from 1 turn to 3 turns. They also require to be in combat"""
 	]
 
 	s = SECTION(Class='pip')
