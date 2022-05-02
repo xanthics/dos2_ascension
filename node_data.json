@@ -498,7 +498,7 @@
           ],
           [
             "If you know Summon Boneshaped Skitterer, Predator reactions no longer perform a basic attack, and instead summon a Boneshaped Skitterer adjacent to the target. For this effect, your Predator reaction range becomes 13m, unless already higher",
-            "<br><span class=\"derpy\">Once per round, Predator reactions also summon a Boneshaped Skitterer adjacent to the target</span>"
+            "<br><span class=\"derpy\">Twice per round, Predator reactions also summon a Boneshaped Skitterer adjacent to the target</span>"
           ],
           [
             "While performing a Predator reaction, gain +20% damage per corpse you can see, up to a maximum of 100%",
@@ -1517,8 +1517,7 @@
             "+6% Accuracy"
           ],
           [
-            "+4% Critical Chance",
-            "<br><span class=\"derpy\">20% to 10%</span>"
+            "+4% Critical Chance"
           ],
           [
             "+10% Damage"
@@ -1533,7 +1532,8 @@
             "<br><span class=\"derpy\">Limited to once per round</span>"
           ],
           [
-            "Once per round, per target, Violent Strike activates when you deal damage to an enemy exceeding 20% of their total Vitality over a turn"
+            "Once per round, per target, Violent Strike activates when you deal damage to an enemy exceeding 20% of their total Vitality over a turn",
+            "<br><span class=\"derpy\">20% to 10%</span>"
           ],
           [
             "Once per round, activate Paucity for 1 turn when your Physical or Magic Armor is damaged to zero"
@@ -3923,7 +3923,7 @@
         [
           [
             "Twice per round, if you have a shield equipped when Abeyance activates, emulate the effects of Shields Up",
-            "<br><span class=\"derpy\">Increased limit to twice per round. Will not perform an animation anymore if you also have The Arena [5, 1</span>"
+            "<br><span class=\"derpy\">Increased limit to twice per round. Will not perform an animation anymore if you also have The Arena: 5.1</span>"
           ],
           [
             "Once per round, your Centurion reaction emulates the effects of Battle Stomp instead of performing a basic attack. If normally less than 10m, Centurion's range becomes 10m for this reaction",
