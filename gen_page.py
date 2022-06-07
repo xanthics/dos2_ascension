@@ -95,7 +95,7 @@ Apparently, these nodes also work when blocking with a shield. The more you know
 Another band-aid fix; this will not fix their damage issues, but it should make the infused reactions that apply tiered effects or other statuses a nice option, if you're willing to bank 1 SP to use them. Centurion Ruptured Tendons node might become particularly pog."""
 	]
 	derpy_generic = [
-		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2022/04/29.",
+		"<strong>Any note in this color is specific to Derpy's Mod.</strong>  Current as of 2022/06/06 V222.",
 		"You can also search for derpy to see only his changed nodes.",
 		"""Elementalist: Removed self damage and lowered multiplier from 90 to 70<br />
 Spellcaster's Finesse: Now also works on Polymorph skills and doesn't remove Finesse's AP recovery effect anymore<br />
